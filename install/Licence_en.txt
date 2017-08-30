@@ -1,0 +1,35 @@
+SOFTWARE LICENSE FOR {PROGRAM} RELEASE {RELNUMBER}
+revised 29 May 2006
+
+Copyright (C) 2005¨C2006 by XingWorld.Net & fangdaolian.com
+
+Summary:
+Following are the terms of license for this release of {PROGRAM}. These terms apply to you whether or not you register the software.
+
+Contact:
+Please address queries, bug reports, and suggested improvements to:
+http://www.fangdaolian.com
+
+Contents:
+1. Trial Period and Registration
+2. Registration Categories:   2.1  Individual Registration  |  2.2  Site License  |  2.3  Source Code 
+3. How to Pay:   3.1  Payment on Line  |  3.2  Direct Payment 
+4. Redistributing {PROGRAM} 
+5. Support for {PROGRAM} 
+6. Upgrades to {PROGRAM} 
+7. Warranty for {PROGRAM} 
+8. Controlling Law 
+
+
+--------------------------------------------------------------------------------
+1. Trial Period and Registration
+--------------------------------------------------------------------------------
+
+This product is copyrighted shareware, not public-domain software. You may use the unregistered version at no charge for an evaluation period of the 10GB traffic/day only. To continue to use the software beyond the 10GB traffic/day evaluation period, you must register it.
+
+The ¡°must¡± in the previous paragraph is a legal and moral must, not an engineering must. This software is not traffic limited in any way. When you register you eliminate the registration reminder, and gain one or two extra features (¡°{PROGRAM} /? | more¡± for details).
+
+To register, see ¡°How to Pay¡± below.
+
+
+--------------------------------------------------------------------------------

@@ -1,0 +1,24 @@
+[OPTIONS]
+Binary Index=No
+Compatibility=1.1 or later
+Compiled file=VwFirewall_chs.chm
+Contents file=Table of Contents.hhc
+Default topic=overview.htm
+Display compile progress=No
+Language=0x804 Chinese (PRC)
+Title=Œ¢∂‹∑¿ª«Ω π”√ ÷≤·
+
+
+[FILES]
+install.htm
+update.htm
+uninstall.htm
+how_to_buy.htm
+overview.htm
+how_to_config.htm
+extra_lock_for_server.htm
+vwfirewall_filelock.html
+vwfirewall_easy_setting.html
+
+[INFOTYPES]
+

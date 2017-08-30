@@ -1,0 +1,17 @@
+[Main]
+version=1000
+date="2010-09-15"
+
+[GroupList]
+group=delete_dangerous_users
+
+
+;
+; 删除“危险本机无用帐号”
+;
+[delete_dangerous_users]
+name="删除“危险本机无用帐号”"
+[delete_dangerous_users.set]
+type=exec|||user=|||chk=ACCOUNT|||cmd="%SystemRoot%\system32\net.exe user"|||path=SQLDebugger|||param=/delete|||
+type=exec|||user=|||chk=ACCOUNT|||cmd="%SystemRoot%\system32\net.exe user"|||path=SUPPORT_388945a0|||param=/delete|||
+

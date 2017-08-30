@@ -1,0 +1,273 @@
+[Main]
+version=1000
+date="2010-09-01"
+
+[GroupList]
+group=del_cdisk_everyone
+group=del_cdisk_creatorowner
+group=del_cdisk_power_users
+group=del_cdisk_terminal_server_user
+group=del_cdisk_users
+group=adddeny_cdisk_guests
+;group=adddeny_cdisk_everyone_for_iishelpcommon
+;group=adddeny_cdisk_everyone_for_dllcache
+group=addallow_cdisk_iis_wpg
+group=addallow_cdisk_iis_wpg_for_macfee
+group=addallow_cdisk_users
+group=addallow_cdisk_users_for_winsxs
+group=addallow_cdisk_users_for_php
+group=delfile_cdisk_for_windows
+group=delfile_cdisk_for_iishelp
+group=delfile_cdisk_for_iisadmpwd
+
+
+
+;
+; 删除C盘所有的Everone权限
+;
+[del_cdisk_everyone]
+name="删除C盘所有的Everone权限"
+[del_cdisk_everyone.set]
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%"|||param=/R "Everyone" /E|||
+;type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Registration"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Documents"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Inetpub/wwwroot/aspnet_client"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft"|||param=/R "Everyone" /E|||
+type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft/HTML Help"|||param=/R "Everyone" /E|||
+
+;
+; 删除C盘所有的CREATOR OWNER权限
+;
+[del_cdisk_creatorowner]
+name="删除C盘所有的CREATOR OWNER权限"
+[del_cdisk_creatorowner.set]
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/repair"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wbem"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/config"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files/WindowsUpdate"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Documents"|||param=/R "CREATOR OWNER" /E|||
+type=acls|||user=CREATOR OWNER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data"|||param=/R "CREATOR OWNER" /E|||
+
+;
+; 删除C盘所有的Power Users权限
+;
+[del_cdisk_power_users]
+name="删除C盘所有的Power Users权限"
+[del_cdisk_power_users.set]
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/repair"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wbem"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/config"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files/WindowsUpdate"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Documents"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft"|||param=/R "Power Users" /E|||
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft/HTML Help"|||param=/R "Power Users" /E|||
+
+;
+; 删除C盘所有的TERMINAL SERVER USER权限
+;
+;	Can't find Account: "VMPC\TERMINAL SERVER USER"
+;	Could not find /R user/group: "TERMINAL SERVER USER" removing from list.
+;	Error: No Groups or Names entered were found, exiting script.
+;
+[del_cdisk_terminal_server_user]
+name="删除C盘所有的TERMINAL SERVER USER权限"
+[del_cdisk_terminal_server_user.set]
+type=acls|||user=TERMINAL SERVER USER|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files"|||param=/R "TERMINAL SERVER USER" /E|||
+
+
+;
+; 删除C盘的所有的users的访问权限
+;
+[del_cdisk_users]
+name="删除C盘的所有的Users的访问权限"
+[del_cdisk_users.set]
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Documents"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/addins"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/AppPatch"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Connection Wizard"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Debug"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Driver Cache"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Help"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/IIS Temporary Compressed Files"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/java"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/msagent"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/mui"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/repair"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Resources"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/security"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/TAPI"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/twain_32"|||param=/R "users" /E|||
+type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Web"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/3com_dmi"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/administration"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/Cache"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/CatRoot2"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/Com"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/config"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/dhcp"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/drivers"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/export"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/icsxml"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/lls"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/LogFiles"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/MicrosoftPassport"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/mui"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/oobe"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ShellExt"|||param=/R "users" /E|||
+;type=acls|||user=users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wbem"|||param=/R "users" /E|||remark=这里影响.NET程序的正常运行,所以去掉!|||
+
+
+;
+; 添加Guests组拒绝权限[IUSR_XXX或某个虚拟主机用户组禁止列目录,可有效防止FSO类木马]
+;
+[adddeny_cdisk_guests]
+name="添加Guests组拒绝权限，可有效防止FSO类木马"
+[adddeny_cdisk_guests.set]
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files"|||param=/D Guests:M /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/repair"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32"|||param=/D Guests:M /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/config"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/inetsrv"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/inetsrv/MetaBack"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/inetsrv/ASP Compiled Templates"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/IIS Temporary Compressed Files"|||param=/D Guests:M /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data"|||param=/D Guests:M /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Microsoft.NET/Framework/v1.1.4322/Temporary ASP.NET Files"|||param=/D Guests:M /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Microsoft.NET/Framework/v2.0.50727/Temporary ASP.NET Files"|||param=/D Guests:M /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft/Crypto/DSS/achineKeys"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft/Crypto/RSA/MachineKeys"|||param=/D Guests:M /E|||
+;type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Documents and Settings/All Users/Application Data/Microsoft/HTML Help"|||param=/D Guests:M /E|||
+
+
+;
+; 为IIS默认的404页目录添加EveryOne禁止写入的权限，防止黑客通过404页目录挂马
+;
+[adddeny_cdisk_everyone_for_iishelpcommon]
+name="添加IIS的404页目录EveryOne禁写权限，防黑客404页目录挂马"
+[adddeny_cdisk_everyone_for_iishelpcommon.set]
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Help/iisHelp/common"|||param=/D Everyone:W /E|||
+
+
+;
+; 禁止所有用户向dllcache文件夹写入数据,防止被黑客利用!影响自动更新内容
+; 暂时去掉!
+;
+[adddeny_cdisk_everyone_for_dllcache]
+name="添加dllcache目录EveryOne禁写权限，防止被黑客利用"
+[adddeny_cdisk_everyone_for_dllcache.set]
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/System32/dllcache"|||param=/D Everyone:W /E|||
+
+
+;
+; 添加IIS_WPG的访问权限
+;
+[addallow_cdisk_iis_wpg]
+name="添加C盘IIS_WPG的访问权限"
+[addallow_cdisk_iis_wpg.set]
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%"|||param=/G IIS_WPG:;b468 /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%"|||param=/G IIS_WPG:b1468;b1468 /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files"|||param=/G IIS_WPG:R /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Downloaded Program Files"|||param=/G IIS_WPG:C /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Help"|||param=/G IIS_WPG:C /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/IIS Temporary Compressed Files"|||param=/G IIS_WPG:F /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Offline Web Pages"|||param=/G IIS_WPG:C /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/System32"|||param=/G IIS_WPG:C /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Tasks"|||param=/G IIS_WPG:C /E|||
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Web"|||param=/G IIS_WPG:C /E|||
+
+
+;
+; 添加C盘IIS_WPG的访问权限[装了MACFEE的软件专用]
+;
+[addallow_cdisk_iis_wpg_for_macfee]
+name="添加C盘IIS_WPG的访问权限[装了MACFEE的软件专用]"
+[addallow_cdisk_iis_wpg_for_macfee.set]
+type=acls|||user=IIS_WPG|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files/Network Associates"|||param=/G IIS_WPG:R /E|||
+
+
+;
+; 添加C盘Users的访问权限
+;
+[addallow_cdisk_users]
+name="添加C盘Users的访问权限"
+[addallow_cdisk_users.set]
+type=acls|||user=Everyone|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/temp"|||param=/G Everyone:M /E|||
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/temp"|||param=/G Users:M /E|||
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files/Common Files"|||param=/G Users:R /E|||
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/Microsoft.NET/Framework"|||param=/G Users:b1468;b1468 /E|||
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/inetpub/ftproot"|||param=/G Users:R /E|||
+
+;
+; 此目录权限和ASP、FSO等的正常运行有很大关系,权限不能乱动!
+;
+[addallow_cdisk_users_for_winsxs]
+name="添加WinSxS目录Users读&执行权限"
+[addallow_cdisk_users_for_winsxs.set]
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/WinSxS"|||param=/G Users:X /E|||
+
+
+;
+; 禁止[列出文件夹 / 读取数据]此权限出现
+; 添加Users的访问权限[装了PHP的服务器专用]
+;
+[addallow_cdisk_users_for_php]
+name="添加Users的访问权限[装了PHP的服务器专用]"
+[addallow_cdisk_users_for_php.set]
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/php"|||param=/G Users:b468;b468 /E|||
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32"|||param=/G "Users" /E|||
+type=acls|||user=Users|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/System32"|||param=/G Users:b468;b468 /E|||
+
+;
+; 删除C盘Windows下的所有的危险文件夹
+;
+[delfile_cdisk_for_windows]
+name="删除C盘Windows下的所有的危险文件夹"
+[delfile_cdisk_for_windows.set]
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%/Web/printers"|||param=-s -r -h|||
+type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\Web\printers\*.*"|||param=|||
+type=exec|||user=|||chk=EDIR|||cmd=|||path="%SystemRoot%\Web\printers\"|||param=|||
+
+
+;
+; 删除IIS默认错误页面，防止黑客通过404等错误页面挂马
+;
+[delfile_cdisk_for_iishelp]
+name="删除IIS默认错误页面，防止黑客通过404等错误页面挂马"
+[delfile_cdisk_for_iishelp.set]
+type=acls|||user=Everyone|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\Help\iisHelp\"|||param=/G Everyone:R /E|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\Help\iisHelp"|||param=-s -r -h|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\Help\iisHelp\*.*"|||param=|||
+;type=exec|||user=|||chk=EDIR|||cmd=|||path="%SystemRoot%\Help\iisHelp\"|||param=|||
+type=exec|||user=|||chk=EDIRRN|||cmd=|||path="%SystemRoot%\Help\iisHelp\"|||param=|||
+
+;
+; 删除IIS密码更改页相关文件，防止被黑客利用
+;
+[delfile_cdisk_for_iisadmpwd]
+name="删除IIS密码更改页相关文件，防止被黑客利用"
+[delfile_cdisk_for_iisadmpwd.set]
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\inetsrv\iisadmpwd"|||param=-s -r -h|||
+type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\inetsrv\iisadmpwd\*.*"|||param=|||
+type=exec|||user=|||chk=EDIR|||cmd=|||path="%SystemRoot%\system32\inetsrv\iisadmpwd\"|||param=|||
+

@@ -1,0 +1,1064 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Chinese (P.R.C.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_CHS)
+#ifdef _WIN32
+LANGUAGE LANG_CHINESE, SUBLANG_CHINESE_SIMPLIFIED
+#pragma code_page(936)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#define _AFX_NO_SPLITTER_RESOURCES\r\n"
+    "#define _AFX_NO_OLE_RESOURCES\r\n"
+    "#define _AFX_NO_TRACKER_RESOURCES\r\n"
+    "#define _AFX_NO_PROPERTY_RESOURCES\r\n"
+    "\r\n"
+    "#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)\r\n"
+    "#ifdef _WIN32\r\n"
+    "LANGUAGE 9, 1\r\n"
+    "#pragma code_page(1252)\r\n"
+    "#endif //_WIN32\r\n"
+    "#include ""res\\VwFirewallCfg.rc2""  // non-Microsoft Visual C++ edited resources\r\n"
+    "#include ""afxres.rc""         // Standard components\r\n"
+    "#endif\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON    DISCARDABLE     "icon\\icon.ico"
+IDI_ICON_SYSTRAY_STOPPED ICON    DISCARDABLE     "icon\\systray_stopped.ico"
+IDI_ICON_SYSTRAY_RUN    ICON    DISCARDABLE     "icon\\systray_run.ico"
+IDI_ICON_SYSTRAY_RUNNING ICON    DISCARDABLE     "icon\\systray_running.ico"
+IDI_ICON_STATUS_RDP_X   ICON    DISCARDABLE     "icon\\status-rdp-x.ico"
+IDI_ICON_STATUS_DOMAIN_OK ICON    DISCARDABLE     "icon\\status-domain-ok.ico"
+IDI_ICON_STATUS_DOMAIN_X ICON    DISCARDABLE     "icon\\status-domain-x.ico"
+IDI_ICON_STATUS_RDP_OK  ICON    DISCARDABLE     "icon\\status-rdp-ok.ico"
+IDI_ICON_STATUS_X       ICON    DISCARDABLE     "icon\\status-x.ico"
+IDI_ICON_STATUS_OK      ICON    DISCARDABLE     "icon\\status-ok.ico"
+IDI_ICON_STATUS_FILE_OK ICON    DISCARDABLE     "icon\\status-file-ok.ico"
+IDI_ICON_STATUS_FILE_X  ICON    DISCARDABLE     "icon\\status-file-x.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOG DISCARDABLE  0, 0, 270, 74
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "关于"
+FONT 9, "宋体"
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,8,11,20,20
+    LTEXT           "微盾防火墙",IDC_STATIC,40,11,119,8,SS_NOPREFIX
+    LTEXT           "Copyright (C) 2005-2010 VirtualWall, Inc. vidun.com",
+                    IDC_STATIC,40,26,220,8
+    DEFPUSHBUTTON   "确定(&O)",IDOK,213,7,50,14,WS_GROUP
+END
+
+IDD_VWFIREWALLCFG_DIALOG DIALOGEX 0, 0, 453, 308
+STYLE DS_MODALFRAME | WS_MINIMIZEBOX | WS_POPUP | WS_CAPTION | WS_SYSMENU
+EXSTYLE WS_EX_APPWINDOW
+CAPTION "微盾服务器防火墙"
+FONT 9, "宋体", 0, 0, 0x1
+BEGIN
+    CONTROL         129,IDC_STATIC_TITIMAGE,"Static",SS_BITMAP,0,0,340,55
+    LTEXT           "关于微盾",IDC_STATIC_LINK_VW,330,293,32,8
+    LTEXT           "|",IDC_STATIC_SPLIT1,365,293,8,8
+    LTEXT           "意见反馈",IDC_STATIC_LINK_DISCUSS,373,293,33,8
+    LTEXT           "...",IDC_STATIC_LINK_AD,5,293,290,8
+    LTEXT           "|",IDC_STATIC_SPLIT2,408,293,8,8
+    LTEXT           "帮助文档",IDC_STATIC_LINK_HELPDOC,416,293,34,8
+    PUSHBUTTON      "防火墙状态",IDC_BUTTON_STATUS,0,51,54,14
+    PUSHBUTTON      "使用许可",IDC_BUTTON_LICENSE,112,51,54,14
+    PUSHBUTTON      "在线升级",IDC_BUTTON_UPDATE,168,51,53,14
+    PUSHBUTTON      "安全设置",IDC_BUTTON_SECURITYCFG,56,51,54,14
+END
+
+IDD_TAB_ABOUT DIALOG DISCARDABLE  0, 0, 406, 201
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "微盾服务器防火墙是一款专为服务器开发的专业防火墙，本软件是免费软件，终身免费升级。",
+                    IDC_STATIC,9,7,344,9
+    LTEXT           "",IDC_STATIC,9,18,351,9
+    LTEXT           "了解更多..",IDC_STATIC_ABOUT_MORE,268,65,47,8
+    LTEXT           "感谢您支持微盾软件。",IDC_STATIC,10,117,164,8
+    LTEXT           "版权所有 (C)2005-2010 北京微盾安全工作室",IDC_STATIC,10,
+                    128,176,8
+    LTEXT           "本软件仅能在以下操作系统上运行:",IDC_STATIC,10,36,350,8
+    LTEXT           "本软件基于驱动层处理技术，运行效率极高。安装后请务必重启服务器。",
+                    IDC_STATIC,10,66,256,8
+    LTEXT           "- Windows Server 2003 32/64-位",IDC_STATIC,10,47,175,8
+END
+
+IDD_TAB_UPDATE DIALOG DISCARDABLE  0, 0, 365, 303
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "当前您正在使用的版本是 %s，该软件终身免费升级。",
+                    IDC_STATIC_CURRVER,7,5,312,9
+    LTEXT           "或者，您可以从我们的网站上获取最新版本。",
+                    IDC_STATIC_DOWNLOAD,7,46,204,8
+    PUSHBUTTON      "检测最新版本(&U)",IDC_BUTTON_CHECKFORUPDATE,6,20,76,16
+END
+
+IDD_TAB_LICENSE DIALOG DISCARDABLE  0, 0, 466, 256
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "",IDC_RICHEDIT_INFO,"RICHEDIT",ES_MULTILINE | 
+                    ES_AUTOHSCROLL | ES_NOHIDESEL | WS_BORDER | WS_TABSTOP,7,
+                    18,438,156
+    LTEXT           "如何购买本软件？",IDC_STATIC_HOWTOBUY,7,180,100,8
+    PUSHBUTTON      "注册码(&E)",IDC_BUTTON_ENTER_KEY,301,191,69,17
+    PUSHBUTTON      "在线激活(&C)",IDC_BUTTON_ONLINE_CHECK,376,191,69,17
+    LTEXT           "本软件授权个人免费使用，商业使用请购买正式版授权",
+                    IDC_STATIC,7,5,325,8
+END
+
+IDD_TAB_SETTING DIALOG DISCARDABLE  0, 0, 486, 276
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    LTEXT           "微盾防火墙是一款专为服务器而开发的专业防火墙软件，能有效提升服务器安全级别，保护服务器免遭入侵。本软件授权个",
+                    IDC_STATIC,9,7,471,9
+    LTEXT           "人免费使用，无任何功能限制，您可以永久免费使用，并享受终身免费升级。",
+                    IDC_STATIC,9,19,273,9
+    LTEXT           "了解更多..",IDC_STATIC_ABOUT_MORE,284,19,47,8
+    ICON            IDI_ICON_STATUS_OK,IDC_STATIC_STATUS,9,39,20,20
+    LTEXT           "微盾防火墙 - 已开启",IDC_STATIC_FIREWALLSTATUS,47,42,
+                    257,10
+    LTEXT           "关闭防火墙",IDC_STATIC_CTLLINK_FIREWALL,47,52,43,8
+    ICON            IDI_ICON_STATUS_FILE_OK,IDC_STATIC_STATUS_FILE,48,66,20,
+                    20
+    LTEXT           "文件锁安全系统 已开启",IDC_STATIC_STATUS_FILE_TXT,74,68,
+                    257,10
+    LTEXT           "停止",IDC_STATIC_CTLLINK_FILE,74,78,16,8
+    LTEXT           "设置",IDC_STATIC_CTLLINK_FILE_SET,97,78,17,8
+    LTEXT           "/",IDC_STATIC_CTLLINK_FILE_SP,92,78,8,8
+    LTEXT           "...",IDC_STATIC_PFILE_BLOCKCOUNT,121,78,219,8
+    ICON            IDI_ICON_STATUS_RDP_OK,IDC_STATIC_STATUS_RDP,47,94,20,20
+    LTEXT           "远程桌面安全 已开启",IDC_STATIC_STATUS_RDP_TXT,74,94,
+                    257,10
+    LTEXT           "停止",IDC_STATIC_CTLLINK_RDP,74,105,17,8
+    LTEXT           "设置",IDC_STATIC_CTLLINK_RDP_SET,97,105,18,8
+    LTEXT           "/",IDC_STATIC_CTLLINK_RDP_SP,92,105,8,8
+    LTEXT           "...",IDC_STATIC_PRDP_BLOCKCOUNT,121,105,228,8
+    ICON            IDI_ICON_STATUS_DOMAIN_OK,IDC_STATIC_STATUS_DOMAIN,48,
+                    120,20,20
+    LTEXT           "域名白名单系统 已开启",IDC_STATIC_STATUS_DOMAIN_TXT,74,
+                    121,257,10
+    LTEXT           "停止",IDC_STATIC_CTLLINK_DOMAIN,74,132,17,8
+    LTEXT           "设置",IDC_STATIC_CTLLINK_DOMAIN_SET,97,132,18,8
+    LTEXT           "/",IDC_STATIC_CTLLINK_DOMAIN_SP,92,132,8,8
+    LTEXT           "...",IDC_STATIC_PDOMAIN_BLOCKCOUNT,121,132,219,8
+END
+
+IDD_DLG_ENTERKEY DIALOG DISCARDABLE  0, 0, 269, 113
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置注册码"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "注册码",IDC_STATIC,7,5,255,69
+    LTEXT           "IP地址:",IDC_STATIC,15,23,30,8
+    LTEXT           "注册码:",IDC_STATIC,15,43,31,8
+    COMBOBOX        IDC_COMBO_REGIP,50,21,162,85,CBS_DROPDOWNLIST | CBS_SORT | 
+                    WS_VSCROLL | WS_TABSTOP
+    EDITTEXT        IDC_EDIT_REGKEY,50,41,201,13,ES_AUTOHSCROLL
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,139,80,59,15
+    PUSHBUTTON      "取消(&C)",IDCANCEL,203,80,59,15
+    PUSHBUTTON      "复制(&O)",IDC_BUTTON_COPY,215,21,36,14
+END
+
+IDD_TAB_DOMAIN DIALOG DISCARDABLE  0, 0, 453, 230
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "域名白名单设置"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,312,191,63,17
+    PUSHBUTTON      "关闭(&C)",IDC_BUTTON_RESTORE,381,191,63,17
+    PUSHBUTTON      "添加(&A)",IDC_BUTTON_ADD,395,18,50,14
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DEL,395,35,50,14
+    PUSHBUTTON      "修改(&M)",IDC_BUTTON_MOD,395,52,50,14
+    CONTROL         "List1",IDC_LIST_DOMAIN,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,18,379,154
+    PUSHBUTTON      "导入(I)",IDC_BUTTON_IMP,395,77,50,14
+    LTEXT           "开启域名白名单系统后，不在下面列表内的域名将无法访问本服务器上的网站",
+                    IDC_STATIC,7,5,365,8
+END
+
+IDD_DLG_DMADD DIALOG DISCARDABLE  0, 0, 268, 137
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "域名"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,5,253,91
+    LTEXT           "授权:",IDC_STATIC,17,20,27,8
+    CONTROL         "允许该域名访问本机",IDC_CHECK_USE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,50,19,185,10
+    LTEXT           "域名:",IDC_STATIC,17,39,26,8
+    EDITTEXT        IDC_EDIT_PANDOMAIN,51,38,184,14,ES_AUTOHSCROLL
+    LTEXT           "例如 www.vidun.com 或者泛域名 *.vidun.com",IDC_STATIC,
+                    51,55,184,8
+    DEFPUSHBUTTON   "保存(&S)",IDC_BUTTON_SAVE,137,104,59,15
+    PUSHBUTTON      "取消(&C)",IDCANCEL,201,104,59,15
+END
+
+IDD_DIALOG_EXPIRE DIALOG DISCARDABLE  0, 0, 273, 98
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "软件续费提醒"
+FONT 9, "宋体"
+BEGIN
+    DEFPUSHBUTTON   "确定(&O)",IDOK,216,7,50,14
+    ICON            IDR_MAINFRAME,IDC_STATIC,7,7,20,20
+    LTEXT           "微盾防火墙即将在 %s 到期，为了不耽误正常使用，请您在此时间之前续费。",
+                    IDC_STATIC_INFO,40,7,166,28
+    LTEXT           "如何为微盾防火墙续费？",IDC_STATIC_HOWTORENEW,36,49,172,
+                    8
+END
+
+IDD_DLG_IMPORT DIALOG DISCARDABLE  0, 0, 289, 222
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "导入域名"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "IIS 上捆绑的所有域名",IDC_STATIC,7,7,275,174
+    DEFPUSHBUTTON   "导入(&I)",IDC_BUTTON_IMPORT,159,188,59,15
+    PUSHBUTTON      "关闭(&C)",IDCANCEL,223,188,59,15
+    CONTROL         "List1",IDC_LIST_DOMAIN,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,15,20,260,153
+END
+
+IDD_TAB_RDP DIALOG DISCARDABLE  0, 0, 453, 228
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "远程桌面安全设置"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,312,191,63,17
+    PUSHBUTTON      "关闭(&C)",IDC_BUTTON_RESTORE,381,191,63,17
+    PUSHBUTTON      "添加(&A)",IDC_BUTTON_ADD,395,18,50,14
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DEL,395,35,50,14
+    PUSHBUTTON      "修改(&M)",IDC_BUTTON_MOD,395,52,50,14
+    CONTROL         "List1",IDC_LIST_RDP,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,18,379,154
+    PUSHBUTTON      "修改远程桌面端口(&P)",IDC_BUTTON_MODRDPPORT,6,191,100,
+                    16
+    LTEXT           "开启远程桌面安全后，不在下面列表内的计算机名将无法通过远程桌面访问本服务器",
+                    IDC_STATIC,7,5,325,8
+END
+
+IDD_DLG_CLIENTADD DIALOG DISCARDABLE  0, 0, 278, 141
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "计算机名"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,5,263,91
+    LTEXT           "授权:",IDC_STATIC,17,20,27,8
+    CONTROL         "允许该计算机名访问本机",IDC_CHECK_USE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,62,19,185,10
+    LTEXT           "计算机名:",IDC_STATIC,17,39,40,8
+    EDITTEXT        IDC_EDIT_CLIENTNAME,63,38,184,14,ES_AUTOHSCROLL
+    LTEXT           "发起远程桌面连接的使用者的计算机名，而非本服务器的计算机名，请认真谨慎填写，务必填写正确。例如 VWDEV1",
+                    IDC_STATIC,63,55,184,25
+    DEFPUSHBUTTON   "保存(&S)",IDC_BUTTON_SAVE,147,106,59,15
+    PUSHBUTTON      "取消(&C)",IDCANCEL,211,106,59,15
+END
+
+IDD_DLG_SETRDPPORT DIALOG DISCARDABLE  0, 0, 264, 173
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "设置远程桌面端口"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,5,250,125
+    LTEXT           "当前端口:",IDC_STATIC,18,21,38,8
+    EDITTEXT        IDC_EDIT_ORG_PORT,63,19,60,14,ES_AUTOHSCROLL | 
+                    ES_READONLY
+    LTEXT           "远程桌面默认端口一般是 3389",IDC_STATIC,132,23,115,8
+    LTEXT           "新端口:",IDC_STATIC,18,50,35,8
+    EDITTEXT        IDC_EDIT_NEW_PORT,63,47,60,14,ES_AUTOHSCROLL
+    LTEXT           "端口范围一般是 1024~65535",IDC_STATIC,131,50,115,8
+    LTEXT           "防火墙:",IDC_STATIC,18,66,32,8
+    CONTROL         "将新端口添加到 Windows 防火墙的例外",
+                    IDC_CHECK_ADDTO_FW_EXCEPTION,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,63,66,180,10
+    LTEXT           "特别注意:",IDC_STATIC,18,95,37,8
+    LTEXT           "如果使用了其他防火墙，请手动将新端口号添加到防火墙例外。",
+                    IDC_STATIC,18,108,227,8
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,134,140,59,15,WS_DISABLED
+    PUSHBUTTON      "取消(&C)",IDCANCEL,198,140,59,15
+END
+
+IDD_DLG_SPLASH DIALOG DISCARDABLE  0, 0, 266, 160
+STYLE WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    CONTROL         191,IDC_STATIC_IMAGE,"Static",SS_BITMAP,0,0,235,140
+END
+
+IDD_TAB_FILE DIALOG DISCARDABLE  0, 0, 453, 228
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "文件锁设置"
+FONT 9, "宋体"
+BEGIN
+    PUSHBUTTON      "保存(&S)",IDC_BUTTON_SAVE,312,191,63,17
+    PUSHBUTTON      "关闭(&C)",IDC_BUTTON_RESTORE,381,191,63,17
+    PUSHBUTTON      "添加(&A)",IDC_BUTTON_ADD_DIR,395,18,50,14
+    PUSHBUTTON      "删除(&D)",IDC_BUTTON_DEL_DIR,395,35,50,14
+    PUSHBUTTON      "修改(&M)",IDC_BUTTON_MOD_DIR,395,52,50,14
+    CONTROL         "List1",IDC_LIST_PROTECTEDDIR,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,18,379,86
+    LTEXT           "开启文件锁后，以下目录内的被保护文件将从文件系统底层被锁死，彻底隔离脚本木马的威胁",
+                    IDC_STATIC,7,5,357,8
+    PUSHBUTTON      "添加(&N)",IDC_BUTTON_ADD_EP,395,122,50,14
+    PUSHBUTTON      "删除(&E)",IDC_BUTTON_DEL_EP,395,139,50,14
+    CONTROL         "List1",IDC_LIST_EXCEPTEDPROCESS,"SysListView32",
+                    LVS_REPORT | LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,
+                    7,122,379,54
+    LTEXT           "例外的进程，不阻止以下进程访问被保护目录内文件",
+                    IDC_STATIC,7,110,347,8
+END
+
+IDD_DLG_PROTECTEDDIR_ADD DIALOG DISCARDABLE  0, 0, 323, 197
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "被保护目录"
+FONT 9, "宋体"
+BEGIN
+    GROUPBOX        "",IDC_STATIC,7,5,309,146
+    LTEXT           "是否保护:",IDC_STATIC,17,20,43,8
+    CONTROL         "开启保护",IDC_CHECK_USE,"Button",BS_AUTOCHECKBOX | 
+                    WS_TABSTOP,68,19,50,10
+    LTEXT           "保护目录:",IDC_STATIC,17,38,39,8
+    EDITTEXT        IDC_EDIT_DIR,68,36,219,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "保存(&S)",IDC_BUTTON_SAVE,193,159,59,15
+    PUSHBUTTON      "取消(&C)",IDCANCEL,257,159,59,15
+    LTEXT           "子目录保护:",IDC_STATIC,18,71,45,8
+    CONTROL         "同时保护所有子目录内文件",IDC_CHECK_TREE,"Button",
+                    BS_AUTOCHECKBOX | WS_TABSTOP,68,70,180,10
+    PUSHBUTTON      "...",IDC_BUTTON_BROWSERDIR,288,36,19,14
+    LTEXT           "例外扩展名:",IDC_STATIC,18,92,46,8
+    EDITTEXT        IDC_EDIT_ECPEXT,68,89,239,14,ES_AUTOHSCROLL
+    LTEXT           "在被保护目录或者其子目录内，其扩展名被指定为例外的文件将可以正常地被创建、修改、删除。例如：“.gif.jpg.jpeg.png”，多个依次用“.”开头的扩展名书写即可。",
+                    IDC_STATIC,69,106,235,28
+    LTEXT           "输入网站跟目录，例如：“C:\\Inetpub\\wwwroot”",
+                    IDC_STATIC,68,53,219,8
+END
+
+IDD_TAB_SECURITYCFG DIALOGEX 0, 0, 529, 292
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "危险文件管理",IDC_RADIO_ACLS_FILE,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,5,5,83,15,
+                    WS_EX_STATICEDGE
+    CONTROL         "危险目录管理",IDC_RADIO_ACLS_FOLDER,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,5,23,83,15,
+                    WS_EX_STATICEDGE
+    CONTROL         "危险病毒免疫",IDC_RADIO_ACLS_ANTIVIRUS,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,5,41,83,15,
+                    WS_EX_STATICEDGE
+    CONTROL         "危险组件管理",IDC_RADIO_OBJECT,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,5,59,83,15,
+                    WS_EX_STATICEDGE
+    CONTROL         "系统服务优化",IDC_RADIO_SERVICE,"Button",
+                    BS_AUTORADIOBUTTON | BS_PUSHLIKE,5,77,83,15,
+                    WS_EX_STATICEDGE
+    LTEXT           "扫描 100 项，发现 10 个问题。",IDC_STATIC_INFO,19,105,
+                    66,50
+    ICON            IDI_ICON_ALERT,IDC_STATIC_INFOICON,6,106,20,20
+END
+
+IDD_TAB_SECURITYCFG_ACLS_FILE DIALOG DISCARDABLE  0, 0, 401, 226
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_GROUP,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,351,166
+    PUSHBUTTON      "诊断(&C)",IDC_BUTTON_DETECT,154,186,63,17
+    PUSHBUTTON      "修复(&F)",IDC_BUTTON_FIX,221,186,63,17,WS_DISABLED
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,0,170,352,7
+    PUSHBUTTON      "还原(&R)",IDC_BUTTON_RECOVER,288,186,63,17,WS_DISABLED
+END
+
+IDD_TAB_SECURITYCFG_ACLS_FOLDER DIALOG DISCARDABLE  0, 0, 401, 246
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_GROUP,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,351,166
+    PUSHBUTTON      "诊断(&C)",IDC_BUTTON_DETECT,154,186,63,17
+    PUSHBUTTON      "修复(&F)",IDC_BUTTON_FIX,221,186,63,17,WS_DISABLED
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,0,170,352,7
+    PUSHBUTTON      "还原(&R)",IDC_BUTTON_RECOVER,288,186,63,17,WS_DISABLED
+END
+
+IDD_DLG_DETAIL DIALOG DISCARDABLE  0, 0, 344, 199
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "详细信息"
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_DETAIL,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,330,149
+    PUSHBUTTON      "关闭(&C)",IDCANCEL,133,166,76,16
+END
+
+IDD_TAB_SECURITYCFG_ACLS_ANTIVIRUS DIALOG DISCARDABLE  0, 0, 401, 226
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_GROUP,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,351,166
+    PUSHBUTTON      "诊断(&C)",IDC_BUTTON_DETECT,154,186,63,17
+    PUSHBUTTON      "修复(&F)",IDC_BUTTON_FIX,221,186,63,17,WS_DISABLED
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,0,170,352,7
+    PUSHBUTTON      "还原(&R)",IDC_BUTTON_RECOVER,288,186,63,17,WS_DISABLED
+END
+
+IDD_TAB_SECURITYCFG_SERVICE DIALOG DISCARDABLE  0, 0, 401, 226
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_GROUP,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,351,166
+    PUSHBUTTON      "诊断(&C)",IDC_BUTTON_DETECT,154,186,63,17
+    PUSHBUTTON      "修复(&F)",IDC_BUTTON_FIX,221,186,63,17,WS_DISABLED
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,0,170,352,7
+    PUSHBUTTON      "还原(&R)",IDC_BUTTON_RECOVER,288,186,63,17,WS_DISABLED
+END
+
+IDD_DLG_SERVICE DIALOG DISCARDABLE  0, 0, 252, 53
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    CTEXT           "...",IDC_STATIC_HINT,1,22,249,8
+END
+
+IDD_TAB_SECURITYCFG_OBJECT DIALOG DISCARDABLE  0, 0, 401, 226
+STYLE WS_CHILD
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_GROUP,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,0,0,351,166
+    PUSHBUTTON      "诊断(&C)",IDC_BUTTON_DETECT,154,186,63,17
+    PUSHBUTTON      "修复(&F)",IDC_BUTTON_FIX,221,186,63,17,WS_DISABLED
+    CONTROL         "Progress1",IDC_PROGRESS_BAR,"msctls_progress32",
+                    WS_BORDER,0,170,352,7
+    PUSHBUTTON      "还原(&R)",IDC_BUTTON_RECOVER,288,186,63,17,WS_DISABLED
+END
+
+IDD_DLG_RECOVER_REG DIALOG DISCARDABLE  0, 0, 294, 185
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "还原到..."
+FONT 9, "宋体"
+BEGIN
+    CONTROL         "List1",IDC_LIST_FILE,"SysListView32",LVS_REPORT | 
+                    WS_BORDER | WS_TABSTOP,7,7,279,128
+    PUSHBUTTON      "取消(&C)",IDCANCEL,227,145,59,16
+    PUSHBUTTON      "还原(&R)",IDC_BUTTON_RECOVER,162,145,59,16,WS_DISABLED
+    LTEXT           "",IDC_STATIC_HINT,7,145,149,18
+END
+
+IDD_DLG_RECOVER_SECURITY DIALOG DISCARDABLE  0, 0, 252, 53
+STYLE DS_MODALFRAME | WS_POPUP
+FONT 9, "宋体"
+BEGIN
+    CTEXT           "...",IDC_STATIC_HINT,1,22,249,8
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 263
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 67
+    END
+
+    IDD_VWFIREWALLCFG_DIALOG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 291
+        HORZGUIDE, 46
+    END
+
+    IDD_TAB_ABOUT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 399
+        VERTGUIDE, 16
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 194
+        HORZGUIDE, 18
+    END
+
+    IDD_TAB_UPDATE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 358
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 296
+    END
+
+    IDD_TAB_LICENSE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 459
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 249
+    END
+
+    IDD_TAB_SETTING, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 479
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 269
+    END
+
+    IDD_DLG_ENTERKEY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 262
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_TAB_DOMAIN, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 427
+        VERTGUIDE, 444
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 223
+    END
+
+    IDD_DLG_DMADD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 261
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 130
+    END
+
+    IDD_DIALOG_EXPIRE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 266
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 91
+    END
+
+    IDD_DLG_IMPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 282
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 215
+    END
+
+    IDD_TAB_RDP, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_DLG_CLIENTADD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 271
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 134
+    END
+
+    IDD_DLG_SETRDPPORT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 257
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 166
+    END
+
+    IDD_DLG_SPLASH, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 259
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 153
+    END
+
+    IDD_TAB_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 446
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 221
+    END
+
+    IDD_DLG_PROTECTEDDIR_ADD, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 316
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 190
+    END
+
+    IDD_TAB_SECURITYCFG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 522
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 285
+    END
+
+    IDD_TAB_SECURITYCFG_ACLS_FILE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_TAB_SECURITYCFG_ACLS_FOLDER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 239
+    END
+
+    IDD_DLG_DETAIL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 337
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 192
+    END
+
+    IDD_TAB_SECURITYCFG_ACLS_ANTIVIRUS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_TAB_SECURITYCFG_SERVICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_DLG_SERVICE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+
+    IDD_TAB_SECURITYCFG_OBJECT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 394
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 219
+    END
+
+    IDD_DLG_RECOVER_REG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 287
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 178
+    END
+
+    IDD_DLG_RECOVER_SECURITY, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 245
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 46
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_BITMAP_TITLE        BITMAP  DISCARDABLE     "bmp\\title_chs.bmp"
+IDB_BITMAP_STATUS_X     BITMAP  DISCARDABLE     "bmp\\status_x.bmp"
+IDB_BITMAP_STATUS_O     BITMAP  DISCARDABLE     "bmp\\status_o.bmp"
+IDB_BITMAP_SHIELD_GREEN BITMAP  DISCARDABLE     "bmp\\shield_green.bmp"
+IDB_BITMAP_SHIELD_RED   BITMAP  DISCARDABLE     "bmp\\shield_red.bmp"
+IDB_BITMAP_SHIELD_YELLOW BITMAP  DISCARDABLE     "bmp\\shield_yellow.bmp"
+IDB_BITMAP_STATUS_WAIT  BITMAP  DISCARDABLE     "bmp\\status_wait.bmp"
+IDB_BITMAP_IMGLIST_TREE BITMAP  DISCARDABLE     "bmp\\imglist_tree.bmp"
+IDB_BITMAP_BUTTON_APPLY BITMAP  DISCARDABLE     "bmp\\button_apply.bmp"
+IDB_BITMAP_BUTTON_RESTORE BITMAP  DISCARDABLE     "bmp\\button_restore.bmp"
+IDB_BITMAP_BUTTON_LICENSE_KEY BITMAP  DISCARDABLE     "bmp\\license_key.bmp"
+IDB_BITMAP_BUTTON_LICENSE_CHECK BITMAP  DISCARDABLE     "bmp\\license_check.bmp"
+IDB_BITMAP_SPLASH       BITMAP  DISCARDABLE     "bmp\\splash_chs.bmp"
+IDB_BITMAP_BUTTON_DETECT BITMAP  DISCARDABLE     "bmp\\button_detect.bmp"
+IDB_BITMAP_BUTTON_FIX   BITMAP  DISCARDABLE     "bmp\\button_fix.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_CURSOR_HAND         CURSOR  DISCARDABLE     "icon\\hand.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MENU_SYSTRAY MENU DISCARDABLE 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "打开官方网站(&H)",            IDM_MENU_SYSTRAY_DEHOMEPAGE
+        MENUITEM "打开配置工具(&O)",            IDM_MENU_SYSTRAY_OPEN
+        MENUITEM SEPARATOR
+        MENUITEM "打开工作目录(&W)",            IDM_MENU_SYSTRAY_OPENWORKINGDIR
+
+        MENUITEM "打开帮助文档(&P)",            IDM_MENU_SYSTRAY_OPENHELPDOC
+        MENUITEM SEPARATOR
+        MENUITEM "开机启动配置工具(&A)",        IDM_MENU_SYSTRAY_STARTAUTO
+        MENUITEM SEPARATOR
+        MENUITEM "退出(&X)",                    IDM_MENU_SYSTRAY_EXIT
+    END
+END
+
+IDR_MENU_ADD_EP MENU DISCARDABLE 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM SEPARATOR
+    END
+END
+
+IDR_MENU_SVC_LIST MENU DISCARDABLE 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "启动服务(&S)",                IDM_MENU_LIST_SVC_START
+        MENUITEM "停止服务(&T)",                IDM_MENU_LIST_SVC_STOP
+    END
+END
+
+IDR_MENU_ACLS_LIST MENU DISCARDABLE 
+BEGIN
+    POPUP "0"
+    BEGIN
+        MENUITEM "详细信息(&D)",                IDM_MENU_LIST_DETAIL
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ABOUTBOX            "&About VwFirewall..."
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_APP_NAME            "微盾防火墙"
+    IDS_APP_STARTUP         "已经启动，您可以通过此工具来完成配置工作。"
+    IDS_APP_CAPTION         "微盾防火墙"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_ALREADYRUN          "配置工具(VwFirewallCfg.exe)已经在运行。"
+    IDS_VERSION             "版本:%s"
+    IDS_WORKINGDIR_ERROR_CAP "工作目录错误"
+    IDS_WORKINGDIR_ERROR_MSG 
+                            "该软件已经安装在“%s”目录内。请运行该目录内配置工具来管理配置信息。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MSG_CAPTION_WARNING "警告"
+    IDS_MSG_CAPTION_PROMPT  "提示"
+    IDS_MSG_CAPTION_ERR     "错误"
+    IDS_MSG_CAPTION_NOTICE  "注意"
+    IDS_MSG_CAPTION_RESULT  "结果"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LANGCODE            "chs"
+    IDS_LANGNAME            "简体中文"
+    IDS_FONTNAME            "宋体"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_MSG_CAPTION_CONGLT  "恭喜"
+    IDS_MSG_CAPTION_CONFIRM "确认"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_STRING_LICENSE_OK   "恭喜，正确的注册码，感谢您支持我们的产品。\r\n为了使得注册码生效，您必须重启服务器。"
+    IDS_STRING_LICENSE_EVALUATE 
+                            "对不起，这不是一个正确的注册码，感谢您试用我们的产品。"
+    IDS_STRING_LICENSE_CONNSRV "程序正在连接验证服务器，请稍候 ..."
+    IDS_STRING_LICENSE_FAILEDCONN 
+                            "对不起，当前无法连接到验证服务器，请稍候再试。"
+    IDS_STRING_REGCONTENTS  "注册信息:\n     许可使用在服务器 %s\n     注册码是 %s\n     注册类型 %s\n     注册日期 %s\n     失效日期 %s"
+    IDS_STRING_REGNOLMT     "无限期"
+    IDS_STRING_BTN_FINS     "安装过滤器(&I)"
+    IDS_STRING_BTN_FUINS    "卸载过滤器(&U)"
+    IDS_STRING_ERR_PANDM    "请输入正确的域名，以“*.”开头。"
+    IDS_DLGCLIENTADD_ERR_PCNAME 
+                            "请输入正确的计算机名，至少 4 个字符并小于 15 个字符，并且以字母开头。"
+    IDS_DLGDMADD_ERR_DOMAIN "请输入正确的域名，至少 4 个字符并小于 128 个字符。"
+    IDS_LISTN_DOMAIN        "域名"
+    IDS_LISTN_STATUS        "状态"
+    IDS_LISTN_COMPUTERNAME  "计算机名"
+    IDS_LISTN_IMPORTRESULT  "导入结果"
+    IDS_LISTS_ALLOW         "允许"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_LISTS_IMPORTSUCC    "导入成功"
+    IDS_LISTS_DOMAINEXIST   "域名已存在"
+    IDS_DLGSETRDPPORT_MODIFY_SUCC 
+                            "恭喜，远程桌面端口已经修改成功！\r\n为了安全地使用远程桌面服务，新的端口将在服务器重启后生效。"
+    IDS_DLGSETRDPPORT_ERR_ADDPORT_EXP1 
+                            "将端口(%d)添加到 Windows 防火墙时失败，请您手动添加后再试。"
+    IDS_DLGSETRDPPORT_ERR_ADDPORT_EXP2 
+                            "保存端口(%d)时失败，请确认注册表允许修改，或者关闭相关病毒保护软件后再试。"
+    IDS_DLGSETRDPPORT_ERR_ADDPORT_EXP3 
+                            "请输入正确的端口号，必须是 1024 至 65535 之间的数字。"
+    IDS_DLGENTERKEY_ERR_UPDATE "无法更新数据！"
+    IDS_LISTS_DENY          "禁止"
+    IDS_TABDOMAIN_ERR_TOOMUCH_DOMAINS "请不要添加多于 100 个域名。"
+    IDS_TABDOMAIN_ERR_BIGDATA "内部错误，数据过于庞大，无法保存！"
+    IDS_TABDOMAIN_ERR_DMEXIST1 "您输入的新域名已经存在。"
+    IDS_TABDOMAIN_ERR_DMEXIST2 "您编辑的域名与现有其他域名重复。"
+    IDS_TABDOMAIN_ERR_OP1   "请先选择一条记录。"
+    IDS_TABDOMAIN_ERR_SAVESUCC "恭喜，配置信息保存成功！"
+    IDS_TABRDP_ERR_TOOMUCH_DOMAINS "请不要添加多于 100 个计算机名。"
+    IDS_TABRDP_ERR_PCNEXIST1 "您输入的新计算机名已经存在。"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TABRDP_ERR_PCNEXIST2 "您编辑的计算机名与现有其他计算机名重复。"
+    IDS_TABRDP_ERR_OP1      "请先选择一条记录。"
+    IDS_TABRDP_ERR_SAVESUCC "恭喜，配置信息保存成功！"
+    IDS_TABRDP_ERR_BIGDATA  "内部错误，数据过于庞大，无法保存！"
+    IDS_TABSETTING_ERR_INS1 "程序不完整，请重新安装。\r\n如果安装后未重启计算机，请先重启计算机！"
+    IDS_TABSETTING_ALERT_RDP1 
+                            "请务必先确认您的计算机名已在“远程桌面安全”单元的列表内，并且允许访问，否则将导致您再也无法通过远程桌面访问该计算机！\r\n\r\n确认要开启该功能吗？"
+    IDS_TABSETTING_ERR_RDP1 "非常危险！您还没有配置允许访问的计算机名，这将导致您再也无法通过远程桌面访问该计算机。\r\n请先在“远程桌面安全”单元添加您的计算机名。"
+    IDS_TABSETTING_ERR_START 
+                            "启动失败，错误代码: %l\r\n如果安装后未重启计算机，请先重启计算机！"
+    IDS_TABSETTING_ERR_STOP "停止失败，错误代码: %l\r\n如果安装后未重启计算机，请先重启计算机！"
+    IDS_TABSETTING_STR_STOPFW "关闭防火墙"
+    IDS_TABSETTING_STR_STARTFW "开启防火墙"
+    IDS_TABSETTING_STR_RUNNING "正在运行"
+    IDS_TABSETTING_STR_STOPPED "已停止"
+    IDS_TABSETTING_STR_INFO1 "%s正在运行，系统处于被保护中"
+    IDS_TABSETTING_STR_INFO2 "%s已停止，系统处于危险中，请尽快开启防火墙"
+    IDS_TABSETTING_STR_INFO3 "已配置 %d 项,今日已拦截 %d 次"
+END
+
+STRINGTABLE DISCARDABLE 
+BEGIN
+    IDS_TABSETTING_STR_DM_RUNNING "域名白名单系统已开启"
+    IDS_TABSETTING_STR_DM_STOPPED "域名白名单系统已关闭"
+    IDS_TABSETTING_STR_STOP_PROTECT "停止"
+    IDS_TABSETTING_STR_START_PROTECT "启动"
+    IDS_TABSETTING_STR_RDP_RUNNING "远程桌面安全已开启"
+    IDS_TABSETTING_STR_RDP_STOPPED "远程桌面安全已关闭"
+    IDS_TABRDP_ERR_EMPTYHINT 
+                            "目前列表内没有任何允许连接的计算机名，为了安全，微盾防火墙核心将自动暂停“远程桌面安全”功能。"
+    IDS_TABSETTING_STR_FILE_RUNNING "文件锁安全系统已开启"
+    IDS_TABSETTING_STR_FILE_STOPPED "文件锁安全系统已关闭"
+END
+
+#endif    // Chinese (P.R.C.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_ICON_X              ICON    DISCARDABLE     "icon\\icon_x.ico"
+IDI_ICON_ALERT          ICON    DISCARDABLE     "icon\\icon_alert.ico"
+IDI_ICON_OK             ICON    DISCARDABLE     "icon\\icon_ok.ico"
+IDI_ICON_UNKNOWN        ICON    DISCARDABLE     "icon\\icon_unknown.ico"
+IDI_ICON_WAIT_S         ICON    DISCARDABLE     "icon\\icon_wait_s.ico"
+IDI_ICON_ARROW_R        ICON    DISCARDABLE     "icon\\icon_arrow_r.ico"
+IDI_ICON_LOADING1       ICON    DISCARDABLE     "icon\\icon_loading1.ico"
+IDI_ICON_LOADING2       ICON    DISCARDABLE     "icon\\icon_loading2.ico"
+IDI_ICON_LOADING3       ICON    DISCARDABLE     "icon\\icon_loading3.ico"
+IDI_ICON_LOADING4       ICON    DISCARDABLE     "icon\\icon_loading4.ico"
+IDI_ICON_LOADING5       ICON    DISCARDABLE     "icon\\icon_loading5.ico"
+IDI_ICON_LOADING6       ICON    DISCARDABLE     "icon\\icon_loading6.ico"
+IDI_ICON_INFO           ICON    DISCARDABLE     "icon\\icon_info.ico"
+IDI_ICON_OKB            ICON    DISCARDABLE     "icon\\icon_okb.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// 24
+//
+
+166                     24      DISCARDABLE     "icon\\xptheme.bin"
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,5,1005
+ PRODUCTVERSION 1,0,5,1005
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x1L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "040904b0"
+        BEGIN
+            VALUE "Comments", "http://www.vidun.com/\0"
+            VALUE "CompanyName", "VirtualWall Security Studio\0"
+            VALUE "FileDescription", "VwFirewallCfg Application\0"
+            VALUE "FileVersion", "1, 0, 5, 1005\0"
+            VALUE "InternalName", "VwFirewallCfg\0"
+            VALUE "LegalCopyright", "Copyright (C)2005-2011 VirtualWall(TM) Security Studio, www.vidun.com\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "VwFirewallCfg.EXE\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "VwFirewallCfg Application\0"
+            VALUE "ProductVersion", "1, 0, 5, 1005\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x409, 1200
+    END
+END
+
+#endif    // !_MAC
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#define _AFX_NO_SPLITTER_RESOURCES
+#define _AFX_NO_OLE_RESOURCES
+#define _AFX_NO_TRACKER_RESOURCES
+#define _AFX_NO_PROPERTY_RESOURCES
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE 9, 1
+#pragma code_page(1252)
+#endif //_WIN32
+#include "res\VwFirewallCfg.rc2"  // non-Microsoft Visual C++ edited resources
+#include "afxres.rc"         // Standard components
+#endif
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
