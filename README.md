@@ -3,8 +3,8 @@
 <p align="center"><img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall.gif"></p>
 
 
-### 关于微盾®
-微盾®是北京德宽科技有限公司注册商标。
+### 关于微盾®VirtualWall®
+微盾®VirtualWall®是北京德宽科技有限公司注册商标。
 
 自 2005 年以来，微盾®专注于服务器安全产品的研发，第一款产品微盾®防盗链专家诞生于2005年5月9日。
 
@@ -98,7 +98,7 @@
 ----------|---------|--------|--------
 Windows 内核驱动 | XING | VwFirewallDrv | 基于 Windows 驱动层的核心部分 
 配置管理工具 | XING |VwFirewallCfg | 基于 MFC 的配置管理工具
-美术设计 | XING |VwFirewallDrv | ICON、界面、网站、Logo 设计
+美术设计 | XING | | ICON、界面、网站、Logo 设计
 帮助文档 | XING |install/VwFirewallHelp | 基于 html 的 chm 文档
 安装脚本 | XING |install | 给予 nsi 的标准 Windows 程序安装脚本
 
