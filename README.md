@@ -100,7 +100,7 @@ Windows 内核驱动 | XING | VwFirewallDrv | 基于 Windows 驱动层的核心�
 配置管理工具 | XING |VwFirewallCfg | 基于 MFC 的配置管理工具
 美术设计 | XING | | ICON、界面、网站、Logo 设计
 帮助文档 | XING |install/VwFirewallHelp | 基于 html 的 chm 文档
-安装脚本 | XING |install | 给予 nsi 的标准 Windows 程序安装脚本
+安装脚本 | XING |install | 基于 nsi 的标准 Windows 程序安装脚本
 
 <p>&nbsp;</p>
 
