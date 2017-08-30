@@ -1,0 +1,229 @@
+<html>
+<head>
+	<title>如何获取子域名？</title>
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<style>
+		td,tr,p{font-family:Courier New;font-size:14px;}
+	</style>
+</head>
+
+<body>
+
+<script language=javascript src="header.js"></script>
+<script language=javascript>PrintHeader( "如何获取子域名？" );</script>
+
+
+
+<table border="0" width="100%" id="table1" height="262">
+  <tr>
+    <td valign=top>
+      <table width="100%" border=0 cellpadding=3 cellspacing=1>
+        <tr>
+          <td colspan=3><b>如何获取子域名？</b></td> 
+        </tr>
+        <tr>
+          <td vAlign=top>
+            <p style="line-height: 200%"><span lang="en-us">&nbsp;&nbsp;&nbsp;
+			</span>微盾<font face="Verdana">&#8482;</font>泛域名解析专家会在网络层修改 IP 数据包。将子域名保存在 Http 包的 
+			User-Agent 节，修改后的 User-Agent 节的内容大概如下：<br>
+<table border="0" width="100%" id="table2">
+				<tr>
+					<td width="26">　</td>
+					<td bgcolor="#E5E5E5"><br>
+					<font color="#FF0000">subdomain@</font>Mozilla/4.0 (compatible; MSIE 
+					8.0; Windows NT 5.1; Trident/4.0; .NET CLR 2.0.50727; .NET 
+					CLR 1.1.4322; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729)<br>
+　</td>
+				</tr>
+			</table>
+
+			&nbsp;&nbsp;&nbsp; 特别注意红色部分，普通的 User-Agent 节是不会有这个内容的。红色的 
+			<font color="#FF0000">subdomain</font> 就是子域名。<br>
+&nbsp;&nbsp;&nbsp; 下面介绍如何使用 ASP, PHP, Asp.Net 脚本语言获取子域名。在安装目录下 SDK 目录也有相应的脚本文件。<br>
+
+			<br>
+			<br>
+			&nbsp;&nbsp;&nbsp; <b>Asp 获取子域名函数</b><table border="0" width="100%" id="table2" height="123">
+				<tr>
+					<td width="26">　</td>
+					<td bgcolor="#E5E5E5">&lt;%<font color="#008080"><br>
+					<br>
+					'////////////////////////////////////////<br>
+					'&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取子域名<br>
+					'////////////////////////////////////////</font><br>
+					<font color="#800000">Function</font> 
+					VwPanDmNew_GetSubDomain()<br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">On </font>
+					<font color="#FF0000">Error</font><font color="#800000"> 
+					Resume Next</font><br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">Dim</font> sRet 
+					: sRet = <font color="#666666">&quot;&quot;</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">Dim</font> 
+					sUserAgent : sUserAgent = <font color="#0000FF">
+					Request.ServerVariables</font>(<font color="#666666">&quot;HTTP_USER_AGENT&quot;</font>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">Dim</font> Arr<br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">If</font> &quot;&quot; &lt;&gt; 
+					sUserAgent <font color="#800000">Then</font><br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					Arr = split( sUserAgent, <font color="#666666">&quot;@&quot;</font> )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<font color="#800000">If</font> <font color="#FF0000">UBound</font>( 
+					Arr ) &gt; <font color="#FF0000">0</font> Then<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					sRet = Arr(<font color="#FF0000">0</font>)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<font color="#800000">End If</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">End If</font><br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; VwPanDmNew_GetSubDomain = sRet<br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">If</font> 0 &lt;&gt; 
+					Err.Number <font color="#800000">Then</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					Err.<font color="#FF9900">Clear</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#800000">End If</font><br>
+					<br>
+					<font color="#800000">End Function<br>
+					<br>
+					</font>%&gt;<br>
+　</td>
+				</tr>
+			</table>
+			
+
+			            <p style="line-height: 200%">&nbsp;&nbsp;&nbsp; <b>PHP 
+						获取子域名函数</b><table border="0" width="100%" id="table2" height="123">
+				<tr>
+					<td width="26">　</td>
+					<td bgcolor="#E5E5E5"><font color="#FF0000">&lt;?php</font><br>
+					<br>
+					<font color="#008080">
+					////////////////////////////////////////<br>
+					//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取子域名<br>
+					////////////////////////////////////////</font><br>
+					<font color="#0000FF">function</font> 
+					VwPanDmNew_GetSubDomain()<br>
+					<font color="#0000FF">{</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FF9900">$sRet</font> = 
+					'';<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FF9900">$sUserAgent</font> 
+					= <font color="#800000">isset</font>( <font color="#0000FF">
+					$_SERVER</font>[<font color="#666666">'HTTP_USER_AGENT'</font>] 
+					) ? <font color="#0000FF">$_SERVER</font>[<font color="#666666">'HTTP_USER_AGENT'</font>] 
+					: <font color="#666666">''</font>;<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FF9900">$nPos</font> =
+					<font color="#FF0000">0</font>;<br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#FF9900">$nPos</font> =
+					<font color="#800000">strpos</font>( <font color="#FF9900">$sUserAgent</font>,
+					<font color="#666666">'@'</font> );<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">if</font> (
+					<font color="#FF9900">$nPos</font> &gt; 0 )<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">{</font><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<font color="#FF9900">$sRet</font> = <font color="#800000">
+					substr</font>( <font color="#FF9900">$sUserAgent</font>,
+					<font color="#FF0000">0</font>, <font color="#FF9900">$nPos</font> 
+					);<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">}</font><br>
+					<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <font color="#0000FF">return</font>
+					<font color="#FF9900">$sRet</font>;<br>
+					<font color="#0000FF">}<br>
+					<br>
+					</font><font color="#FF0000">?&gt;<br>
+　</font></td>
+				</tr>
+			</table>
+
+
+			            <p style="line-height: 200%">&nbsp;&nbsp;&nbsp; <b>
+						Asp.Net 
+						获取子域名函数</b><table border="0" width="100%" id="table2" height="123">
+				<tr>
+					<td width="26">　</td>
+					<td bgcolor="#E5E5E5"><font color="#FF0000">&lt;?php</font><br>
+					<br>
+					<font color="#008080">
+					////////////////////////////////////////<br>
+					//&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 获取子域名<br>
+					////////////////////////////////////////</font><br>
+					<font color="#0000FF">protected
+					</font><font color="#FF0000">string</font><font color="#0000FF"> 
+					</font>VwPanDmNew_GetSubDomain()<font color="#0000FF"><br>
+					</font>{<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font><font color="#FF0000">string</font><font color="#0000FF">
+					</font>HTTP_USER_AGENT<font color="#0000FF">
+					</font><font color="#008000">=</font><font color="#0000FF">
+					</font>Request.ServerVariables[<font color="#808080">&quot;HTTP_USER_AGENT&quot;</font>].ToString();<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; if
+					</font>( HTTP_USER_AGENT<font color="#0000FF"> !=
+					</font><font color="#FF0000">string</font>.Empty )<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>{<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font><font color="#FF0000">string</font>[] array = 
+					HTTP_USER_AGENT.Split(<font color="#808080">'@'</font>);<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					if (
+					</font>array.Length-<font color="#FF0000">1</font>
+					<font color="#008000">&gt;</font> <font color="#FF0000">0</font><font color="#0000FF"> 
+					)<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>{<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font><font color="#FF0000">string</font><font color="#0000FF">
+					</font>subDomain <font color="#008000">=</font> array[<font color="#FF0000">0</font>];<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					return
+					</font>subDomain;<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>}<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>{<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					return
+					</font><font color="#FF0000">string</font>.Empty;<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>}<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>}<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; else<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>{<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+					return
+					</font><font color="#FF0000">string</font>.Empty;<font color="#0000FF"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					</font>}<font color="#0000FF"><br>
+					</font>}<font color="#0000FF"><br>
+					<br>
+					</font><font color="#FF0000">?&gt;<br>
+　</font></td>
+				</tr>
+			</table>
+
+			</td>
+        </tr>
+      </table>
+      
+    </td>
+  </tr>
+
+
+</table>
+
+
+<script language=javascript src="footer.js"></script>
+
+</body>
+
+</html>

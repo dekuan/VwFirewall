@@ -1,0 +1,134 @@
+[Main]
+version=1000
+date="2010-09-08"
+
+[GroupList]
+group=antivirus_arp
+group=antivirus_3389pwd
+group=antivirus_langouster_udf
+
+
+
+;
+; 多种ARP病毒免疫
+;
+[antivirus_arp]
+name="多种ARP病毒免疫"
+[antivirus_arp.set]
+; 删除system32\npptools.dll，新建npptools.dll设为只读,权限上限制 可防止所有arp病毒
+;type=acls|||user=Everyone|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\npptools.dll"|||param=/R Everyone /E|||
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\npptools.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\npptools.dll" "%SystemRoot%\system32\npptools.dll.vwbak"|||path="%SystemRoot%\system32\npptools.dll"|||param=%SystemRoot%\system32\npptools.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\npptools.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\npptools.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\npptools.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\npptools.dll"|||param=/D Everyone:F /E|||
+
+; 删除system32\packet.dll，新建packet.dll设为只读,权限上限制 可防止所有arp病毒
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\packet.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\packet.dll" "%SystemRoot%\system32\packet.dll.vwbak"|||path="%SystemRoot%\system32\packet.dll"|||param=%SystemRoot%\system32\packet.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\packet.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\packet.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\packet.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\packet.dll"|||param=/D Everyone:M /E|||
+
+; 删除system32\pthreadVC.dll，新建pthreadVC.dll设为只读,权限上限制 可防止所有arp病毒
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\pthreadVC.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\pthreadVC.dll" "%SystemRoot%\system32\pthreadVC.dll.vwbak"|||path="%SystemRoot%\system32\pthreadVC.dll"|||param=%SystemRoot%\system32\pthreadVC.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\pthreadVC.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\pthreadVC.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\pthreadVC.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\pthreadVC.dll"|||param=/D Everyone:M /E|||
+
+; 删除system32\wpcap.dll，新建wpcap.dll设为只读,权限上限制 可防止所有arp病毒
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\wpcap.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\wpcap.dll" "%SystemRoot%\system32\wpcap.dll.vwbak"|||path="%SystemRoot%\system32\wpcap.dll"|||param=%SystemRoot%\system32\wpcap.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\wpcap.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\wpcap.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\wpcap.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\wpcap.dll"|||param=/D Everyone:M /E|||
+
+; 删除system32\npf.sys，新建npf.sys设为只读,权限上限制 可防止所有arp病毒
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\drivers\npf.sys"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\drivers\npf.sys" "%SystemRoot%\system32\drivers\npf.sys.vwbak"|||path="%SystemRoot%\system32\drivers\npf.sys"|||param=%SystemRoot%\system32\drivers\npf.sys.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\drivers\npf.sys"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\drivers\npf.sys"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\drivers\npf.sys"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\drivers\npf.sys"|||param=/D Everyone:M /E|||
+
+
+
+;
+; 清除3389后门密码劫持病毒
+;
+[antivirus_3389pwd]
+name="清除3389后门密码劫持病毒"
+[antivirus_3389pwd.set]
+; 清除3389后门密码劫持器,该病毒为盗号木马,运行后释放BAT文件和REG文件注册启动项目,并通过DLL文件截取密码信息发送至网络.
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\wminotify.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\wminotify.dll" "%SystemRoot%\system32\wminotify.dll.vwbak"|||path="%SystemRoot%\system32\wminotify.dll"|||param=%SystemRoot%\system32\wminotify.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\wminotify.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\wminotify.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\wminotify.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\wminotify.dll"|||param=/D Everyone:M /E|||
+
+
+
+;
+; 免疫langouster_udf.dll网页木马
+; 删除udf.dll和langouster_udf.dll，新建udf.dll和langouster_udf.dll设为只读,权限上限制 可防止所有langouster_udf.dll网页木马
+;
+[antivirus_langouster_udf]
+name="免疫langouster_udf.dll网页木马"
+[antivirus_langouster_udf.set]
+; 停止 mysql 服务
+;type=exec|||user=|||chk=|||cmd=net stop mysql|||path=""|||param=|||remark=停止mysql服务|||
+
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\udf.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\udf.dll" "%SystemRoot%\system32\udf.dll.vwbak"|||path="%SystemRoot%\system32\udf.dll"|||param=%SystemRoot%\system32\udf.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\udf.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\udf.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\udf.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\udf.dll"|||param=/D Everyone:M /E|||
+
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\udf.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\udf.dll" "%SystemRoot%\udf.dll.vwbak"|||path="%SystemRoot%\udf.dll"|||param=%SystemRoot%\udf.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\udf.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\udf.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\udf.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\udf.dll"|||param=/D Everyone:M /E|||
+
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\temp\udf.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\temp\udf.dll" "%SystemRoot%\temp\udf.dll.vwbak"|||path="%SystemRoot%\temp\udf.dll"|||param=%SystemRoot%\temp\udf.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\temp\udf.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\temp\udf.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\temp\udf.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\temp\udf.dll"|||param=/D Everyone:M /E|||
+
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\langouster_udf.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\system32\langouster_udf.dll" "%SystemRoot%\system32\langouster_udf.dll.vwbak"|||path="%SystemRoot%\system32\langouster_udf.dll"|||param=%SystemRoot%\system32\langouster_udf.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\system32\langouster_udf.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\system32\langouster_udf.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\system32\langouster_udf.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\system32\langouster_udf.dll"|||param=/D Everyone:M /E|||
+
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\langouster_udf.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\langouster_udf.dll" "%SystemRoot%\langouster_udf.dll.vwbak"|||path="%SystemRoot%\langouster_udf.dll"|||param=%SystemRoot%\langouster_udf.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\langouster_udf.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\langouster_udf.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\langouster_udf.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\langouster_udf.dll"|||param=/D Everyone:M /E|||
+
+;type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\temp\langouster_udf.dll"|||param=-R -S -H|||
+;type=exec|||user=|||chk=PEBAKF|||cmd=copy "%SystemRoot%\temp\langouster_udf.dll" "%SystemRoot%\temp\langouster_udf.dll.vwbak"|||path="%SystemRoot%\temp\langouster_udf.dll"|||param=%SystemRoot%\temp\langouster_udf.dll.vwbak|||
+;type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\temp\langouster_udf.dll"|||param=|||
+;type=exec|||user=|||chk=|||cmd=echo CREATE_NEW_TEMP_TEXTFILE ON %date% >|||path="%SystemRoot%\temp\langouster_udf.dll"|||param=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\temp\langouster_udf.dll"|||param=+R +S +H|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%\temp\langouster_udf.dll"|||param=/D Everyone:M /E|||
+
+; 启动 mysql 服务
+;type=exec|||user=|||chk=|||cmd=net start mysql|||path=""|||param=|||remark=启动mysql服务|||
+
+
+
+

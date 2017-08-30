@@ -1,0 +1,787 @@
+[Main]
+version=1000
+date="2010-09-01"
+
+[GroupList]
+;group=scrrun.dll
+group=arp.exe
+group=at.exe
+group=atsvc.exe
+group=attrib.exe
+group=autoexec.bat
+group=boot.ini
+group=cacls.exe
+group=cmd.exe
+group=command.com
+group=cscript.exe
+group=debug.exe
+group=doskey.exe
+group=edit.com
+group=edlin.exe
+group=find.exe
+group=finger.exe
+group=format.com
+group=ftp.exe
+group=gpresult.exe
+group=gpupdate.exe
+group=help.exe
+group=iexplore.exe
+group=ipconfig.exe
+group=ipsec6.exe
+group=logoff.exe
+group=magnify.exe
+group=mountvol.exe
+group=msconfig.exe
+group=mshta.exe
+group=nbtstat.exe
+group=net.exe
+group=netdde.exe
+group=netsh.exe
+group=netstat.exe
+group=notepad.exe
+group=nslookup.exe
+group=nwscript.exe
+group=ping.exe
+group=posix.exe
+group=powercfg.exe
+group=print.exe
+group=qbasic.exe
+group=reg.exe
+group=regedit.exe
+group=regedt32.exe
+group=register.exe
+group=regsvr32.exe
+group=replace.exe
+group=route.exe
+group=rsh.exe
+group=runas.exe
+group=runonce.exe
+group=sc.exe
+group=secedit.exe
+group=sethc.exe
+group=setx.exe
+group=shadow.exe
+group=share.exe
+group=shell.dll
+group=shell32.dll
+group=shutdown.exe
+group=syskey.exe
+group=telnet.exe
+group=tftp.exe
+group=tracert.exe
+group=where.exe
+group=winhelp.exe
+group=winhlp32.exe
+group=wscript.exe
+group=wshext.dll
+group=wshom.ocx
+group=xcopy.exe
+group=zipfldr.dll
+;免疫“木马列出IIS目录
+group=activeds.dll
+group=activeds.dll
+group=activeds.tlb
+
+
+
+
+
+
+;
+; 防止WINDOWS漏洞[粘置键]的"变态入侵之有史以来最酷的Windows后门sethc_exe
+;
+[sethc.exe]
+name="免疫“粘置键”漏洞"
+[sethc.exe.set]
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/sethc.exe"|||param=/D Everyone:M /E|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/dllcache/sethc.exe"|||param=/D Everyone:M /E|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/ServicePackFiles/i386/sethc.exe"|||param=/D Everyone:M /E|||
+
+;
+; 防止以放大镜后门入侵服务器
+;
+[magnify.exe]
+name="免疫“放大镜”后门"
+[magnify.exe.set]
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/magnify.exe"|||param=/D Everyone:M /E|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/dllcache/magnify.exe"|||param=/D Everyone:M /E|||
+type=acls|||user=Everyone|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/ServicePackFiles/i386/magnify.exe"|||param=/D Everyone:M /E|||
+type=exec|||user=|||cmd="%SystemRoot%\system32\attrib.exe" +R +S +H|||path="%SystemRoot%/system32/magnify.exe"|||param=|||
+
+;
+;
+;
+[boot.ini]
+name="boot.ini安全"
+[boot.ini.set]
+type=acls|||user=Administrators|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/boot.ini"|||param=/G Administrators:F|||
+type=acls|||user=SYSTEM|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/boot.ini"|||param=/G SYSTEM:F /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/boot.ini"|||param=/D Guests:F /E|||
+
+
+;
+;
+;
+[autoexec.bat]
+name="autoexec.bat安全"
+[autoexec.bat.set]
+type=acls|||user=Administrators|||chk=N|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/AUTOEXEC.BAT"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/AUTOEXEC.BAT"|||param=/D Guests:F /E|||
+
+
+;
+;
+;
+[iexplore.exe]
+name="iexplore.exe安全"
+[iexplore.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files/Internet Explorer/iexplore.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemDrive%/Program Files/Internet Explorer/iexplore.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[net.exe]
+name="net.exe安全"
+[net.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/net.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/net.exe"|||param=/D Guests:F /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/net1.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/net1.exe"|||param=/D Guests:F /E|||
+
+
+;
+;
+;
+[cmd.exe]
+name="cmd.exe安全"
+[cmd.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/cmd.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/cmd.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[command.com]
+[command.com.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/command.com"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/command.com"|||param=/D Guests:F /E|||
+
+
+
+;
+;
+;
+[ftp.exe]
+name="ftp.exe安全"
+[ftp.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ftp.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ftp.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[scrrun.dll]
+name="scrrun.dll安全"
+[scrrun.dll.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/scrrun.dll"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/scrrun.dll"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[shell.dll]
+name="shell.dll安全"
+[shell.dll.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shell.dll"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shell.dll"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[netstat.exe]
+name="netstat.exe安全"
+[netstat.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/netstat.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/netstat.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[regedit.exe]
+name="注册表编辑器安全"
+[regedit.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/regedit.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/regedit.exe"|||param=/D Guests:F /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/regedit.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/regedit.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[secedit.exe]
+name="secedit.exe安全"
+[secedit.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/secedit.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/secedit.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[gpresult.exe]
+name="gpresult.exe安全"
+[gpresult.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/gpresult.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/gpresult.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[gpupdate.exe]
+name="gpupdate.exe安全"
+[gpupdate.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/gpupdate.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/gpupdate.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[at.exe]
+name="at.exe安全"
+[at.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/at.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/at.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[attrib.exe]
+name="attrib.exe安全"
+[attrib.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/attrib.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/attrib.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[format.com]
+name="format.com安全"
+[format.com.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/format.com"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/format.com"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[logoff.exe]
+name="logoff.exe安全"
+[logoff.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/logoff.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/logoff.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[shutdown.exe]
+name="shutdown.exe安全"
+[shutdown.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shutdown.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shutdown.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[telnet.exe]
+name="telnet.exe安全"
+[telnet.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/telnet.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/telnet.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[wscript.exe]
+name="wscript.exe安全"
+[wscript.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wscript.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wscript.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[doskey.exe]
+name="doskey.exe安全"
+[doskey.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/doskey.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/doskey.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[help.exe]
+[help.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/help.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/help.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[ipconfig.exe]
+[ipconfig.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ipconfig.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ipconfig.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[nbtstat.exe]
+[nbtstat.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/nbtstat.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/nbtstat.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[print.exe]
+[print.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/print.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/print.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[xcopy.exe]
+[xcopy.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/xcopy.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/xcopy.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[edit.com]
+[edit.com.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/edit.com"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/edit.com"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[regedt32.exe]
+[regedt32.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/regedt32.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/regedt32.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[reg.exe]
+[reg.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/reg.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/reg.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[register.exe]
+[register.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/register.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/register.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[replace.exe]
+[replace.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/replace.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/replace.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[nwscript.exe]
+[nwscript.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/nwscript.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/nwscript.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[share.exe]
+[share.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/share.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/share.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[ping.exe]
+[ping.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ping.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ping.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[ipsec6.exe]
+[ipsec6.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ipsec6.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/ipsec6.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[netsh.exe]
+[netsh.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/netsh.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/netsh.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[debug.exe]
+[debug.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/debug.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/debug.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[route.exe]
+[route.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/route.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/route.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[tracert.exe]
+[tracert.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/tracert.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/tracert.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[powercfg.exe]
+[powercfg.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/powercfg.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/powercfg.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[nslookup.exe]
+[nslookup.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/nslookup.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/nslookup.exe"|||param=/D Guests:F /E|||
+
+
+
+
+
+
+;
+;
+;
+[arp.exe]
+name="arp.exe安全"
+[arp.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/arp.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/arp.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[rsh.exe]
+name="rsh.exe安全"
+[rsh.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/rsh.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/rsh.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[netdde.exe]
+name="netdde.exe安全"
+[netdde.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/netdde.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/netdde.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[mshta.exe]
+name="mshta.exe安全"
+[mshta.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/mshta.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/mshta.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[mountvol.exe]
+name="mountvol.exe安全"
+[mountvol.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/mountvol.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/mountvol.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[tftp.exe]
+name="tftp.exe安全"
+[tftp.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/tftp.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/tftp.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[setx.exe]
+name="setx.exe安全"
+[setx.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/setx.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/setx.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[find.exe]
+name="find.exe安全"
+[find.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/find.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/find.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[finger.exe]
+name="finger.exe安全"
+[finger.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/finger.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/finger.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[where.exe]
+name="where.exe安全"
+[where.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/where.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/where.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[regsvr32.exe]
+name="regsvr32.exe安全"
+[regsvr32.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/regsvr32.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/regsvr32.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[cacls.exe]
+name="cacls.exe安全"
+[cacls.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/cacls.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/cacls.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[sc.exe]
+name="sc.exe安全"
+[sc.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/sc.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/sc.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[shadow.exe]
+name="shadow.exe安全"
+[shadow.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shadow.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shadow.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[runas.exe]
+name="runas.exe安全"
+[runas.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/runas.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/runas.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[wshom.ocx]
+name="wshom.ocx安全"
+[wshom.ocx.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wshom.ocx"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wshom.ocx"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[wshext.dll]
+name="wshext.dll安全"
+[wshext.dll.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wshext.dll"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/wshext.dll"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[shell32.dll]
+name="shell32.dll安全"
+[shell32.dll.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shell32.dll"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/shell32.dll"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[zipfldr.dll]
+name="zipfldr.dll安全"
+[zipfldr.dll.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/zipfldr.dll"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/zipfldr.dll"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[msconfig.exe]
+name="msconfig.exe安全"
+[msconfig.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/PCHealth/HelpCtr/Binaries/msconfig.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/PCHealth/HelpCtr/Binaries/msconfig.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[notepad.exe]
+name="notepad.exe安全"
+[notepad.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/notepad.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/notepad.exe"|||param=/D Guests:F /E|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/notepad.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/notepad.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[winhelp.exe]
+name="winhelp.exe安全"
+[winhelp.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/winhelp.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/winhelp.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[winhlp32.exe]
+name="winhlp32.exe安全"
+[winhlp32.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/winhlp32.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/winhlp32.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[edlin.exe]
+name="edlin.exe安全"
+[edlin.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/edlin.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/edlin.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[posix.exe]
+name="posix.exe安全"
+[posix.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/posix.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/posix.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[atsvc.exe]
+name="atsvc.exe安全"
+[atsvc.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/atsvc.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/atsvc.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[qbasic.exe]
+name="qbasic.exe安全"
+[qbasic.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/qbasic.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/qbasic.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[runonce.exe]
+name="runonce.exe安全"
+[runonce.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/runonce.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/runonce.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[syskey.exe]
+name="syskey.exe安全"
+[syskey.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/syskey.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/syskey.exe"|||param=/D Guests:F /E|||
+
+;
+;
+;
+[cscript.exe]
+name="cscript.exe安全"
+[cscript.exe.set]
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/cscript.exe"|||param=/G Administrators:F|||
+type=acls|||user=Guests|||chk=D|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/cscript.exe"|||param=/D Guests:F /E|||
+
+
+
+
+
+
+;
+;
+;
+[activeds.dll]
+name="免疫“木马列出IIS目录”(activeds.dll)"
+[activeds.dll.set]
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/ServicePackFiles/i386/activeds.dll"|||param=/R "Power Users" /E|||
+type=acls|||user=Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/ServicePackFiles/i386/activeds.dll"|||param=/R "Users" /E|||
+
+;
+;
+;
+[activeds.dll]
+name="免疫“木马列出IIS目录”(activeds.dll)"
+[activeds.dll.set]
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/activeds.dll"|||param=/R "Power Users" /E|||
+type=acls|||user=Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/activeds.dll"|||param=/R "Users" /E|||
+
+;
+;
+;
+[activeds.tlb]
+name="免疫“木马列出IIS目录”(activeds.tlb)"
+[activeds.tlb.set]
+type=acls|||user=Power Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/activeds.tlb"|||param=/R "Power Users" /E|||
+type=acls|||user=Users|||chk=E|||cmd="%SystemRoot%\system32\cscript.exe" "%VwScriptDir%\xcacls.vbs"|||path="%SystemRoot%/system32/activeds.tlb"|||param=/R "Users" /E|||
+
+

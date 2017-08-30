@@ -1,0 +1,161 @@
+[Main]
+version=1000
+date="2010-09-11"
+
+[GroupList]
+group=reg_delete_classes_root
+group=regsvr32_uninstall_object
+group=reg_add_disallowrun_programs
+group=reg_add_restrictanonymous
+group=reg_add_disabledport445
+group=reg_add_disabledport135
+group=reg_add_show_all_files_and_folders
+;group=reg_add_crashdumpenabled
+group=reg_delete_happytime
+group=reg_delete_pendingfilerenameoperations
+group=reg_delete_uncompleted_unins_object
+group=reg_delete_vbscript_encode
+group=reg_delete_3389backdoor
+
+
+
+;
+;
+;
+[reg_delete_classes_root]
+name="删除某些危险Shell组件"
+[reg_delete_classes_root.set]
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=WScript.Shell|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=WScript.Shell.1|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=Shell.application|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=Shell.application.1|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=WSCRIPT.NETWORK|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=WSCRIPT.NETWORK.1|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+
+;
+;
+;
+[regsvr32_uninstall_object]
+name="卸载某些危险COM组件"
+[regsvr32_uninstall_object.set]
+type=regsvr32|||user=|||chk=UNINSTALL|||cmd="%SystemRoot%\system32\regsvr32.exe"|||path="%SystemRoot%\system32\wshom.ocx"|||param=/s /u|||regroot=HKEY_CLASSES_ROOT|||regpath=CLSID\{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}|||regvname=|||regvtype=|||regv=|||remark=|||
+type=regsvr32|||user=|||chk=UNINSTALL|||cmd="%SystemRoot%\system32\regsvr32.exe"|||path="%SystemRoot%\system32\wshext.dll"|||param=/s /u|||regroot=HKEY_CLASSES_ROOT|||regpath=CLSID\{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}|||regvname=|||regvtype=|||regv=|||remark=|||
+type=regsvr32|||user=|||chk=UNINSTALL|||cmd="%SystemRoot%\system32\regsvr32.exe"|||path="%SystemRoot%\system32\shell32.dll"|||param=/s /u|||regroot=HKEY_CLASSES_ROOT|||regpath=CLSID\{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}|||regvname=|||regvtype=|||regv=|||remark=|||
+type=regsvr32|||user=|||chk=UNINSTALL|||cmd="%SystemRoot%\system32\regsvr32.exe"|||path="%SystemRoot%\system32\zipfldr.dll"|||param=/s /u|||regroot=HKEY_CLASSES_ROOT|||regpath=CLSID\{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}|||regvname=|||regvtype=|||regv=|||remark=|||
+
+
+;
+; 加强系统核心安全
+; 防止 Windows 运行指定程序
+; 如果启用该设置，被添加到列表的程序将无法运行
+;
+[reg_add_disallowrun_programs]
+name="禁止某些危险程序运行"
+[reg_add_disallowrun_programs.set]
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer|||regvname=DisallowRun|||regvtype=REG_DWORD|||regv=1|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=login.scr|||regvtype=REG_SZ|||regv=login.scr|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=xsiff.exe|||regvtype=REG_SZ|||regv=xsiff.exe|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=xsniff.exe|||regvtype=REG_SZ|||regv=xsniff.exe|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=sethc.exe|||regvtype=REG_SZ|||regv=sethc.exe|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=WinPcap.exe|||regvtype=REG_SZ|||regv=WinPcap.exe|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=nc.exe|||regvtype=REG_SZ|||regv=nc.exe|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=sql.exe|||regvtype=REG_SZ|||regv=sql.exe|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_CURRENT_USER|||regpath=Software\Microsoft\Windows\CurrentVersion\Policies\Explorer\DisallowRun|||regvname=su.exe|||regvtype=REG_SZ|||regv=su.exe|||param=|||remark=|||
+
+;
+; 删除IPC$空连接
+;
+[reg_add_restrictanonymous]
+name="删除IPC$空连接"
+[reg_add_restrictanonymous.set]
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SYSTEM\CurrentControlSet\Control\Lsa|||regvname=restrictanonymous|||regvtype=REG_DWORD|||regv=1|||param=|||remark=|||
+
+;
+; 关闭445端口
+;
+[reg_add_disabledport445]
+name="关闭445端口"
+[reg_add_disabledport445.set]
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SYSTEM\CurrentControlSet\Services\NetBT\Parameters|||regvname=SMBDeviceEnabled|||regvtype=REG_DWORD|||regv=0|||param=|||remark=|||
+
+;
+; 关闭135端口
+;
+[reg_add_disabledport135]
+name="关闭135端口"
+[reg_add_disabledport135.set]
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Microsoft\Ole|||regvname=EnableDCOM|||regvtype=REG_SZ|||regv=N|||param=|||remark=|||
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Microsoft\Rpc|||regvname=DCOM Protocols|||regvtype=REG_MULTI_SZ|||regv=|||param=|||remark=|||
+
+;
+; 修复“不能显示所有文件和文件夹”问题
+;
+[reg_add_show_all_files_and_folders]
+name="修复“不能显示所有文件和文件夹”问题"
+[reg_add_show_all_files_and_folders.set]
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=Software\Microsoft\windows\CurrentVersion\explorer\Advanced\Folder\Hidden\SHOWALL|||regvname=CheckedValue|||regvtype=REG_DWORD|||regv=1|||param=|||remark=|||
+
+;
+; 禁止“dump file 产生和删除现有 MEMORY.DMP 文件”
+; dump文件在系统崩溃和蓝屏的时候是一份很有用的查找问题的资料。然而，它也能够给黑客提供一些敏感信息比如一些应用程序的密码等。
+;
+[reg_add_crashdumpenabled]
+name="禁止“MEMORY.DMP产生并删除现有MEMORY.DMP”"
+[reg_add_crashdumpenabled.set]
+type=reg|||user=|||chk=ADD|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SYSTEM\CurrentControlSet\Control\CrashControl|||regvname=CrashDumpEnabled|||regvtype=REG_DWORD|||regv=0|||param=|||remark=|||
+type=exec|||user=|||chk=|||cmd="%SystemRoot%\system32\attrib.exe"|||path="%SystemRoot%\MEMORY.DMP"|||param=-s -r -h|||
+type=exec|||user=|||chk=EFILE|||cmd=|||path="%SystemRoot%\MEMORY.DMP"|||param=|||
+
+
+;
+; 去除欢乐时光(HappyTime)病毒威胁
+; 影响生成HTML功能，所以暂时不能开启该功能
+;
+[reg_delete_happytime]
+name="去除欢乐时光(HappyTime)病毒威胁"
+[reg_delete_happytime.set]
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=CLSID\{06290BD5-48AA-11D2-8432-006008C3FBFC}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=Scriptlet.TypeLib|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+
+
+;
+; 禁用“重启重命名方式加载启动项”
+; 重启重命名的执行优先级比传统的自启动（一般指HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\ CurrentVersion\Run）要高, 启动完成后又将自己删除或改名回去. 这种方式自启动极为隐蔽,现有的安全工具都无法检测的出来. 
+; 病毒通过重启重命名方式加载，位于注册表HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Control\ BackupRestore\KeysNotToRestore下的Pending Rename Operations字串。
+;
+[reg_delete_pendingfilerenameoperations]
+name="禁用“重启重命名方式加载启动项”"
+[reg_delete_pendingfilerenameoperations.set]
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SYSTEM\CurrentControlSet\Control\Session Manager|||regvname=PendingFileRenameOperations|||regvtype=|||regv=|||param=|||remark=|||
+
+;
+; 删除“未卸载完的危险组件”
+;
+[reg_delete_uncompleted_unins_object]
+name="删除“未卸载完的危险组件”"
+[reg_delete_uncompleted_unins_object.set]
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Classes\CLSID\{093FF999-1EA0-4079-9525-9614C3504B74}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Classes\CLSID\{72C24DD5-D70A-438B-8A42-98424B88AFB8}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Classes\CLSID\{F935DC22-1CF0-11D0-ADB9-00C04FD58A0B}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Classes\CLSID\{F935DC26-1CF0-11D0-ADB9-00C04FD58A0B}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+
+;
+; 禁用“VBScript.Encode组件”，使加密网页木马失效
+;
+[reg_delete_vbscript_encode]
+name="禁用“VBScript.Encode组件”，使加密网页木马失效"
+[reg_delete_vbscript_encode.set]
+;type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=VBScript.Encode|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+;type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_CLASSES_ROOT|||regpath=CLSID\{B54F3743-5B07-11cf-A4B0-00AA004A55E8}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+;type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Classes\VBScript.Encode|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+;type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Classes\CLSID\{B54F3743-5B07-11cf-A4B0-00AA004A55E8}|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+
+;
+; 清除“3389后门密码劫持器”
+; 该病毒为盗号木马,运行后释放BAT文件和REG文件注册启动项目,并通过DLL文件截取密码信息发送至网络.
+;
+[reg_delete_3389backdoor]
+name="清除“3389后门密码劫持器”"
+[reg_delete_3389backdoor.set]
+type=reg|||user=|||chk=DELETE|||cmd=|||path=|||regroot=HKEY_LOCAL_MACHINE|||regpath=SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon\Notify\wminotify|||regvname=|||regvtype=|||regv=|||param=|||remark=|||
+

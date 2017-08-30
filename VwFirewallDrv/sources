@@ -1,0 +1,5 @@
+TARGETNAME=VwFirewallDrv
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+
+SOURCES=VwFirewallDrv.rc Driver.c md5.c crc32.c DrvFunc.c DrvFuncReg.c DrvThreadLogger.c ProcProcess.c ProcConfig.c ProcPacket.c ProcRdp.c FsApiHook.c

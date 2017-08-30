@@ -1,0 +1,74 @@
+;;;
+;;;
+;;; Copyright (C) 3721  Corporation.
+;;;
+;;;
+;;;
+
+[Version]
+signature	=   "$Windows NT$"
+Class		=   "filter"					;This is determined by the work this filter driver does
+Provider 	=   %Msft%
+DriverVer	=   04/16/2003,1.0.0.0
+
+[DestinationDirs]
+DefaultDestDir	         = 12
+VwFirewallDrv.DriverFiles      = 12 			;%windir%\system32\drivers
+
+;;
+;; Default install sections
+;;
+
+[DefaultInstall]
+OptionDesc          = %FwHookDrvServiceDesc%
+CopyFiles           = VwFirewallDrv.DriverFiles
+
+[SourceDisksNames]
+1 = %Disk1%
+
+[SourceDisksFiles]
+VwFirewallDrv.sys = 1
+
+[DefaultInstall.Services]
+AddService          = %FwHookDrvServiceName%,,VwFirewallDrv.Service
+
+;;
+;; Default uninstall sections
+;;
+
+[DefaultUninstall]
+DelFiles   = VwFirewallDrv.DriverFiles
+
+[DefaultUninstall.Services]
+DelService = VwFirewallDrv,0x200		; Flags note to stop service first
+
+;
+; Services Section
+;
+
+[VwFirewallDrv.Service]
+DisplayName      = %FwHookDrvServiceName%
+Description      = %FwHookDrvServiceDesc%
+ServiceBinary    = %12%\VwFirewallDrv.sys			;%windir%\system32\drivers\VwFirewallDrv.sys
+ServiceType      = 1					;SERVICE_FILE_SYSTEM_DRIVER
+StartType        = 2					;SERVICE_DEMAND_START
+ErrorControl     = 1					;SERVICE_ERROR_NORMAL
+
+;
+; Copy Files
+;
+
+[VwFirewallDrv.DriverFiles]
+VwFirewallDrv.sys
+
+;;
+;; String Section
+;;
+
+[Strings]
+Msft		   = "Copyright (C) 3721 Corporation."
+FwHookDrvServiceDesc = "VwFirewallDrv Filter Driver"
+FwHookDrvServiceName = "VwFirewallDrv"
+FwHookDrvRegistry    = "system\currentcontrolset\services\VwFirewallDrv"
+Disk1              = "VwFirewallDrv Source Media"
+

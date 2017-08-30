@@ -1,0 +1,115 @@
+<html>
+<head>
+	<title>为你的服务器加把锁</title>
+	<meta http-equiv="Content-Language" content="zh-cn">
+	<meta http-equiv="Content-Type" content="text/html; charset=gb2312">
+	<style>
+		td,tr,p{font-family:Courier New;font-size:14px;}
+	</style>
+</head>
+
+<body>
+<script language=javascript src="header.js"></script>
+<script language=javascript>PrintHeader( "为你的服务器加把锁" );</script>
+
+
+
+<table border="0" width="100%" id="table1" height="262">
+  <tr>
+    <td>
+      <table width="100%" border=0 cellpadding=3 cellspacing=1>
+        <tr>
+          <td colspan=3><b>为你的服务器加把锁</b></td> 
+        </tr>
+        <tr>
+          <td vAlign=top style="line-height: 150%">
+            <br>
+&nbsp;&nbsp;&nbsp; 服务器管理员一般都是通过微软提供的“远程桌面”软件访问服务器。经常会因为微软系统的某个漏洞而被入侵，Windows 
+			系统漏洞不断，我们已对 Windows 系统的安全性不敢恭维。<br>
+&nbsp;&nbsp;&nbsp; 曾经就有过一个输入法漏洞，让入侵者在一分钟之内就能轻松进入服务器。有时候密码设置的再复杂还是不放心 ...<br>
+			<br>
+&nbsp;&nbsp;&nbsp; 我简单列举几个 Windows 服务器远程桌面系统的危险与威胁：<br>
+&nbsp;&nbsp;&nbsp; 1，Windows 服务器本身不断的漏洞可能导致服务器被入侵。<br>
+&nbsp;&nbsp;&nbsp; 2，很多管理员可能会用默认的登录帐号 
+			administrator，并且当密码也可能比较简单，有耐心的黑客不断地尝试也许就能入侵。<br>
+&nbsp;&nbsp;&nbsp; 3，当多人共用一台服务器，或接受其他人远程协助登陆后，忘记更改密码，每次都修改密码也比较麻烦。<br>
+&nbsp;&nbsp;&nbsp; 4，其他诸多不安全的操作或原因。<br>
+			<br>
+&nbsp;&nbsp;&nbsp; <font color="#FF0000">那么，如果能限制远程桌面登陆者的计算机名，不在允许之列的计算机被禁止链接，那么，“远程桌面”的安全问题
+			就将彻底解决。</font><br>
+			<br>
+			&nbsp;&nbsp;&nbsp; 微盾<span lang="en-us"><font face="Verdana">&trade;</font></span>防火墙的“远程桌面安全”既是您服务器的这把锁，它能为您的服务器加
+			上一把更安全的锁，您可以将需要登陆该服务器的计算机名添加到允许列表内，不在列表内的计算机根本连“远程桌面”的登录界面都看不到，彻底失去
+			登陆该服务器的机会，从而彻底防范入侵。<br>
+			<br>
+　</td>
+        </tr>
+
+      </table>
+
+
+      <table width="100%" border=0 cellpadding=3 cellspacing=1>
+        <tr>
+          <td colspan=3><b>如何为服务器加这把锁？？</b></td> 
+        </tr>
+        <tr>
+          <td vAlign=top style="line-height: 150%">
+            <br>
+&nbsp;&nbsp;&nbsp; 配置方法和步骤如下：<br>
+			<br>&nbsp;&nbsp;&nbsp; 1，从微盾<span lang="en-us"><font face="Verdana">&trade;</font></span>官官方网站下载最新版本的微盾<span lang="en-us"><font face="Verdana">&trade;</font></span>防火墙，下载地址如下：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<a target="_blank" href="http://rd.vidun.net/?4502">
+			http://rd.vidun.net/?4502</a><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 安装微盾<span lang="en-us"><font face="Verdana">&trade;</font></span>防火墙后，必须要重启服务器。<br>
+			<br>
+&nbsp;&nbsp;&nbsp; 2，打开配置界面<span lang="en-us"> </span>&raquo;<span lang="en-us">
+			</span>防火墙状态 &raquo; 远程桌面安全 &raquo; 点击“设置”：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="images/vwfirewall_cfg_1_sub2_empty.gif"><br>
+			<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 点“添加”按钮，如下图：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="images/vwfirewall_cfg_3-add.gif" width="423" height="237"><br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 输入允许访问的计算机名：“vwdev1”，点“保存”按钮。<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 再点主界面的“保存”按钮。<br>
+			<br>
+&nbsp;&nbsp;&nbsp;&nbsp; 3，点击“防火墙状态”按钮，进入防火墙状态界面：<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<img border="0" src="images/vwfirewall_cfg_1.gif"><br>
+			<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 确认“远程桌面安全已开启”，如果未开启，请点“开启防御”。<br>
+			<br>
+&nbsp;&nbsp;&nbsp; 到此，已经配置完成。现在试试，如果计算机名不是“vwdev1”，肯定是无法通过远程桌面登陆。<br>
+&nbsp;&nbsp;&nbsp; 恭喜！您的服务器从此又多了一层安全屏障。<br>
+&nbsp; <br>
+			<br>
+　</td>
+        </tr>
+
+      </table>
+    </td>
+  </tr>
+
+
+</table>
+
+
+<script language=javascript src="footer.js"></script>
+
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+try
+{
+	var pageTracker = _gat._getTracker( "UA-2033792-5" );
+	pageTracker._trackPageview();
+}
+catch(err)
+{}
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+MUI_386_OBJECTS= \
+    $(_OBJ_DIR)\i386\vwfirewalldrv.res
+
+386_OBJECTS= \
+    $(_OBJ_DIR)\i386\vwfirewalldrv.res \
+    $(_OBJ_DIR)\i386\driver.obj \
+    $(_OBJ_DIR)\i386\md5.obj \
+    $(_OBJ_DIR)\i386\crc32.obj \
+    $(_OBJ_DIR)\i386\drvfunc.obj \
+    $(_OBJ_DIR)\i386\drvfuncreg.obj \
+    $(_OBJ_DIR)\i386\drvthreadlogger.obj \
+    $(_OBJ_DIR)\i386\procprocess.obj \
+    $(_OBJ_DIR)\i386\procconfig.obj \
+    $(_OBJ_DIR)\i386\procpacket.obj \
+    $(_OBJ_DIR)\i386\procrdp.obj \
+    $(_OBJ_DIR)\i386\fsapihook.obj
+
+MUI_IA64_OBJECTS= \
+    $(_OBJ_DIR)\ia64\vwfirewalldrv.res
+
+IA64_OBJECTS= \
+    $(_OBJ_DIR)\ia64\vwfirewalldrv.res \
+    $(_OBJ_DIR)\ia64\driver.obj \
+    $(_OBJ_DIR)\ia64\md5.obj \
+    $(_OBJ_DIR)\ia64\crc32.obj \
+    $(_OBJ_DIR)\ia64\drvfunc.obj \
+    $(_OBJ_DIR)\ia64\drvfuncreg.obj \
+    $(_OBJ_DIR)\ia64\drvthreadlogger.obj \
+    $(_OBJ_DIR)\ia64\procprocess.obj \
+    $(_OBJ_DIR)\ia64\procconfig.obj \
+    $(_OBJ_DIR)\ia64\procpacket.obj \
+    $(_OBJ_DIR)\ia64\procrdp.obj \
+    $(_OBJ_DIR)\ia64\fsapihook.obj
+
+MUI_AMD64_OBJECTS= \
+    $(_OBJ_DIR)\amd64\vwfirewalldrv.res
+
+AMD64_OBJECTS= \
+    $(_OBJ_DIR)\amd64\vwfirewalldrv.res \
+    $(_OBJ_DIR)\amd64\driver.obj \
+    $(_OBJ_DIR)\amd64\md5.obj \
+    $(_OBJ_DIR)\amd64\crc32.obj \
+    $(_OBJ_DIR)\amd64\drvfunc.obj \
+    $(_OBJ_DIR)\amd64\drvfuncreg.obj \
+    $(_OBJ_DIR)\amd64\drvthreadlogger.obj \
+    $(_OBJ_DIR)\amd64\procprocess.obj \
+    $(_OBJ_DIR)\amd64\procconfig.obj \
+    $(_OBJ_DIR)\amd64\procpacket.obj \
+    $(_OBJ_DIR)\amd64\procrdp.obj \
+    $(_OBJ_DIR)\amd64\fsapihook.obj
+
+MUI_ARM_OBJECTS= \
+    $(_OBJ_DIR)\arm\vwfirewalldrv.res
+
+ARM_OBJECTS= \
+    $(_OBJ_DIR)\arm\vwfirewalldrv.res \
+    $(_OBJ_DIR)\arm\driver.obj \
+    $(_OBJ_DIR)\arm\md5.obj \
+    $(_OBJ_DIR)\arm\crc32.obj \
+    $(_OBJ_DIR)\arm\drvfunc.obj \
+    $(_OBJ_DIR)\arm\drvfuncreg.obj \
+    $(_OBJ_DIR)\arm\drvthreadlogger.obj \
+    $(_OBJ_DIR)\arm\procprocess.obj \
+    $(_OBJ_DIR)\arm\procconfig.obj \
+    $(_OBJ_DIR)\arm\procpacket.obj \
+    $(_OBJ_DIR)\arm\procrdp.obj \
+    $(_OBJ_DIR)\arm\fsapihook.obj
+
