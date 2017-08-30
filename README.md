@@ -1,6 +1,6 @@
 # 微盾®防火墙
 
-<p align="center"><img src="http://www.vidun.com/images/sys_product/vwfirewall.gif"></p>
+<p align="center"><img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall.gif"></p>
 
 
 ### 关于微盾®
@@ -8,18 +8,36 @@
 
 自 2005 年以来，微盾®专注于服务器安全产品的研发，第一款产品微盾®防盗链专家诞生于2005年5月9日。
 
+微盾®官方网站（ICP备案：京ICP备15011519号-1）：<br />
+[http://www.vidun.com/](http://www.vidun.com/)
+
+
+<p>&nbsp;</p>
+
+
+### 为什么开源？
+
+微盾®防火墙产品一直深受广大用户支持与信赖，微盾®研发人员 12 年来一直在努力做好服务器安全产品。很多老用户一直在使用我们的产品，为了让微盾®防火墙做的更好，我们希望吸引更多优秀的开发人员加入，聚集更多大神的力量把微盾®防火墙做更好。
+
+<p>&nbsp;</p>
+
 
 ### 微盾®防火墙
 
 微盾®防火墙是一款专为 Windows 服务器而开发的专业防火墙软件，能有效提升服务器安全级别，保护服务器免遭入侵。本软件授权个人免费使用，无任何功能限制。
 
-### 为什么要开源
+微盾®防火墙官方网站：<br />
+[http://www.vidun.com/vwsoft-vwfirewall-intro.html](http://www.vidun.com/vwsoft-vwfirewall-intro.html)
 
+
+<p>&nbsp;</p>
 
 
 ### 运行环境
 
 该软件能运行在 Windows Server 2003 / 32 位。
+
+<p>&nbsp;</p>
 
 
 ### 主要功能
@@ -30,22 +48,53 @@
 - 修改远程桌面服务访问端口
 - 一键完成服务器安全配置，其中包括：“危险文件管理”、“危险目录管理”、“危险病毒免疫”、“危险组件管理”、“系统服务优化”等。
 
+<p>&nbsp;</p>
+
 
 ### 软件截图
 
+<p><img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_splash_chs.gif" /></p>
 
+<p>
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_1.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_2.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_3.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_4.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_5.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_6.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_7.gif" />
+<br />
+
+<img src="https://raw.githubusercontent.com/dekuan/VwFirewall/master/images/vwfirewall_cfg_8.gif" />
+<br />
+</p>
+
+<p>&nbsp;</p>
 
 
 ### 开发人员
 
 模块	| 开发人员	| 源码目录 | 功能
 ----------|---------|--------|--------
-Windows 内核驱动 | 刘其星 | VwFirewallDrv | 基于 Windows 驱动层的核心部分 
-配置管理工具 | 刘其星 |VwFirewallCfg | 基于 MFC 的配置管理工具
-美术设计 | 刘其星 |VwFirewallDrv | ICON、界面、网站、Logo 设计
-帮助文档 | 刘其星 |install/VwFirewallHelp | 基于 html 的 chm 文档
-安装脚本 | 刘其星 |install | 给予 nsi 的标准 Windows 程序安装脚本
+Windows 内核驱动 | XING | VwFirewallDrv | 基于 Windows 驱动层的核心部分 
+配置管理工具 | XING |VwFirewallCfg | 基于 MFC 的配置管理工具
+美术设计 | XING |VwFirewallDrv | ICON、界面、网站、Logo 设计
+帮助文档 | XING |install/VwFirewallHelp | 基于 html 的 chm 文档
+安装脚本 | XING |install | 给予 nsi 的标准 Windows 程序安装脚本
 
+<p>&nbsp;</p>
 
 
 
