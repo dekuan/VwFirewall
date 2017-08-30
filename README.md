@@ -26,6 +26,14 @@
 
 微盾®防火墙是一款专为 Windows 服务器而开发的专业防火墙软件，能有效提升服务器安全级别，保护服务器免遭入侵。本软件授权个人免费使用，无任何功能限制。
 
+微盾®防火墙主要技术点：
+
+- 基于 Windows 内核驱动 ipfirewall 技术的开发。
+- 基于 RDP(Remote Display Protocol) 协议的 Windows 远程桌面安全加固。
+- 常规 Windows 服务器木马、病毒扫描与免疫。
+- 常规 Windows 危险组件的管理与优化。
+- 常规 Windows 系统服务的优化。
+
 微盾®防火墙官方网站：<br />
 [http://www.vidun.com/vwsoft-vwfirewall-intro.html](http://www.vidun.com/vwsoft-vwfirewall-intro.html)
 
