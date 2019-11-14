@@ -1,0 +1,76 @@
+#ifndef __VWCONSTBASE_HEADER__
+#define __VWCONSTBASE_HEADER__
+
+
+
+//////////////////////////////////////////////////////////////////////////
+#define alerti( msg ) MessageBox( msg, "Information", MB_ICONINFORMATION )
+#define alertw( msg ) MessageBox( msg, "Warning", MB_ICONWARNING )
+#define alerte( msg ) MessageBox( msg, "Error", MB_ICONERROR )
+
+
+//////////////////////////////////////////////////////////////////////////
+//	for user message
+enum
+{
+	UM_DATACHANGE	= ( WM_USER + 0x1000 ),
+	UM_DISABLEAPPLY,
+	UM_OPENHTMLHELP,
+	UM_OPENCFGFILE,			//	for VirtualHtml Only
+	UM_CTRL_BUTTON,			//	for ctrl buttons
+	UM_DO_NEXT			//	do next, a common message
+};
+
+enum
+{
+	WPARAM_HEMLHELP_OVERVIEW = 0x1000,			//	防盗链专家帮助文档首页
+	WPARAM_HEMLHELP_ABOUTVSID,				//	关于 VSID 的细节
+	WPARAM_HEMLHELP_AUTOEXPIRED,				//	关于“关于“VSID自动作废”的使用说明”
+	WPARAM_HEMLHELP_ABOUTPROTECTION,			//	关于保护设置的细节
+	WPARAM_HEMLHELP_ABOUTSUPERMODE,				//	关于超强防盗模式
+	WPARAM_HEMLHELP_ABOUTVWBROWSERIN,			//	关于客户端插件
+	WPARAM_HEMLHELP_ABOUTFRIENDLYHOST_NOTICE1,		//	关于友情站点的配置注意
+	WPARAM_HEMLHELP_ABOUTFRIENDLYHOST_NETSHOP_ANTILEECHS,	//	关于友情站点的配置，网店如何做图片防盗链
+	WPARAM_HEMLHELP_ABOUTVHTML_SOLUTIONS			//	使用SDK文件配置方案
+};
+
+enum
+{
+	WPARAM_HEMLHELP_VWPANDM_OVERVIEW = 0x1100,		//	打开帮助文档首页
+	WPARAM_HEMLHELP_VWPANDM_GET_SUBDOMAIN			//	如何获取子域名
+};
+
+enum
+{
+	WPARAM_HEMLHELP_VWCMANTILEECH_OVERVIEW = 0x1200,	//	打开帮助文档首页
+	WPARAM_HEMLHELP_VWCMANTILEECH_RTSP_ABOUT_ALERTFILE,	//	关于警告替换文件的使用方法
+	WPARAM_HEMLHELP_VWCMANTILEECH_RTSP_ABOUT_ANTILEECH,	//	关于 Rtsp 流媒体协议防盗链
+	WPARAM_HEMLHELP_VWCMANTILEECH_RTSP_HOW_TO_LINK,		//	如何正确地调用被保护资源？
+	WPARAM_HEMLHELP_VWCMANTILEECH_RTSP_ABOUTVSID,		//	关于 VSID 的细节
+};
+
+//	for VwFirewall
+enum
+{
+	WPARAM_HEMLHELP_VWFIREWALL_OVERVIEW = 0x1300,
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_FIREWALL,		//	开启、关闭 防火墙
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_FILE,		//	开启、关闭 文件锁
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_FILE_SET,		//	设置 文件锁
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_DOMAIN,		//	开启、关闭 域名白名单
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_DOMAIN_SET,	//	设置 域名白名单
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_RDP,		//	开启、关闭 远程桌面安全
+	WPARAM_HEMLHELP_VWFIREWALL_CTRLSTATUS_RDP_SET,		//	设置 远程桌面安全
+
+	WPARAM_HEMLHELP_VWFIREWALL_DONEXT_RECOVER_REG,		//	恢复 注册表下一步
+	WPARAM_HEMLHELP_VWFIREWALL_DATA_DATACHANGE,		//	修改信息
+};
+
+
+#define CONST_DLLFILE_DELIB		"DeLib.dll"
+#define CONST_DLLFILE_DELIBNPP		"DeLibNPp.dll"
+#define CONST_DLLFILE_DELIBSKS		"DeLibSks.dll"
+#define CONST_DLLFILE_DELIBPS		"DeLibPs.dll"
+
+
+
+#endif	//	__VWCONSTBASE_HEADER__
